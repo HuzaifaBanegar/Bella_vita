@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#navmobile {
+    display: none;
+}
+
+#headnav {
+    text-align: center;
+    background-color: rgb(243, 199, 70);
+}
+
+#huznav {
+    display: flex;
+    padding: 10px 10px 0px;
+    border: 0.5px solid rgb(230, 228, 228);
+}
+
+.huz_content {
+    display: flex;
+    width: 80%;
+    font-size: 13px;
+    font-weight: lighter;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    padding: 15px 0px;
+}
+
+.navicons {
+    padding: 10px 5px;
+    width: 10%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5%;
+}
+
+.navicons img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+@media only screen and (max-width:1499px) and (min-width:1200px) {
+    .huz_content {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(2, 30px);
+    }
+}
+
+@media only screen and (max-width:1199px) {
+    #huznav {
+        display: none;
+    }
+
+    #navmobile {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 10px 0px;
+        border: 0.5px solid rgb(230, 228, 228);
+    }
+
+    .navmobfirst img,
+    .navmoblast img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .navmobfirst , .navmoblast{
+        display: flex;
+        justify-content: space-between;
+        width: 10%;
+        padding: 10px;
+    }
+}
