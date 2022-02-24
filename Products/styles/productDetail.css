@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#ga_directory {
+    padding: 30px;
+    border: 1px solid red;
+}
+#ga_container {
+    height: 500px;
+    display: flex;
+    gap: 10px;
+}
+#ga_image {
+    flex: 5;
+    border: 1px solid green;
+}
+#ga_details {
+    flex: 5;
+    border: 1px solid red;
+}
