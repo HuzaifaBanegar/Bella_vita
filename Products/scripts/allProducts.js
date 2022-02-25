@@ -2,8 +2,8 @@ import { allProducts } from "./productsData.js";
 import { appendData, sortProducts } from "./productScripts.js";
 
 // Appending navbar and footer to the page by importing it from components
-import navbar from "../../Navbar and bottom panel/components/navbar.js"
-import bottomPanel from "../../Navbar and bottom panel/components/bottompanel.js"
+import navbar from "../../components/navbar.js"
+import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 

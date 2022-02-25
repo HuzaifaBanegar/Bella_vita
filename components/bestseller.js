@@ -11,16 +11,6 @@ const bestsellerList=()=>{
         "Qty": 1  },
       {
         "Category": "skin",
-        "Name": "Glowey Face Pack, Scrub & Face Wash 3 in 1 for Glowing Skin & Radiance Unisex Ayurveda, 100 g With Free Face Pack Applicator Brush",
-        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowey-01_3122f22c-16b1-4dfe-ab7e-f5a4e16c2aaa_1024x1024.jpg?v=1631708103",
-        "Price": "298",
-        "Price1":"369",
-        "Rating": "4.5",
-        "Review": "1605",
-        "dis":"Bella Vita Organic's Eyelift Under Eye Cream Gel makes for a great companion for reducing dark circles, dullness and puffy eyes. It is curated with natural cucumber extract, tulsi, jojoba oil, almond oil & pure aloe-vera gel, meant for everyday...",
-        "Qty": 1  },
-      {
-        "Category": "skin",
         "Name": "Day Glow Sunscreen Face and Body Lotion SPF 30+for All Skin Types",
         "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/DAYGLOW-01_1024x1024.jpg?v=1632393899",
         "Price": "301",
@@ -612,16 +602,6 @@ const bestsellerList=()=>{
       }
       const comboList=()=>{
           return [
-            {
-              "Category": "skin",
-              "Name": "Oil Control & Face Glow Combo (C Glow + Exfoliate + Ubtan Plus + Anti Acne)",
-              "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Face-wash_-Exfoliate_-Anti-Acne_-Ubtan_800x.jpg?v=1626938935",
-              "Price1": "803",
-              "Price": "590",
-              "Rating": "4.8998.",
-              "Review": "160",
-              "Qty": 1
-              },
               {
               "Category": "skin",
               "Name": "Natural Roll On For Bright Healthy Underarms",
@@ -634,32 +614,12 @@ const bestsellerList=()=>{
               },
               {
               "Category": "skin",
-              "Name": "Face Spots & Marks Reduction Combo",
-              "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Combo18_800x.jpg?v=1632918139",
-              "Price1": "359",
-              "Price": "327",
-              "Rating": "4.5",
-              "Review": "204",
-              "Qty": 1
-              },
-              {
-              "Category": "skin",
               "Name": "Pomegranate 3 in 1 Tinty for Lips, Cheeks & Eyelids for moisturizing & nourishing|Lip Stains & Tints 8 gm",
               "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Pomegrante-02_800x.jpg?v=1637916570",
               "Price1": "328",
               "Price": "199",
               "Rating": "4.6",
               "Review": "354",
-              "Qty": 1
-              },
-              {
-              "Category": "skin",
-              "Name": "best-skin-brightening-combo-at-rs-999-natural-skin-brightening-products",
-              "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Combo18_1024x1024.jpg?v=1632918139",
-              "Price1": "299",
-              "Price": "501",
-              "Rating": "2.5",
-              "Review": "39",
               "Qty": 1
               },
               {
