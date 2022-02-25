@@ -5,8 +5,8 @@ import navbar from "./navbar.js"
     nav.innerHTML = navbar();
 
     document.getElementById("allProducts").addEventListener("click", () => {
-    window.location.href= '../../Products/allProducts.html';
-})
+        window.location.href= '../Products/allProducts.html';
+    })
 
     let thumbnail = document.getElementsByClassName("ga_thumbnail");
     // console.log(thumbnail)

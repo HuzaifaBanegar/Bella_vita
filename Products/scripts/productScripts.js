@@ -1,6 +1,6 @@
 
 //This function is made to show the Products to that related page.
-const appendData = (data,parent) => {
+const appendData = (data,parent,cartFun) => {
 
     data.forEach((elem) => {
 
@@ -14,6 +14,10 @@ const appendData = (data,parent) => {
         let cart_button = document.createElement("button")
         cart_button.textContent = "ADD TO CART";
         cart_button.id = "ga_addToCart"
+        cart_button.addEventListener("click", () => {
+            cartFun(elem);
+        })
+
 
         img_div.addEventListener("mouseover", () => {
             image.src = elem.Img_url;
@@ -67,6 +71,9 @@ const appendData = (data,parent) => {
         let div = document.createElement("div");
         let div2 = document.createElement("div");
         div2.className = "ga_text_div";
+        div2.addEventListener("click", () => {
+            window.location.href = "productDetail.html";
+        })
 
         div2.append(name,review,pricePrint,h5);
 
@@ -81,6 +88,9 @@ const appendData = (data,parent) => {
                 bottom_button.style.display = "none";
             }
         }
+        bottom_button.addEventListener("click", () => {
+            cartFun(elem);
+        })
 
         let medium = window.matchMedia("(max-width: 1025px)");
         displayButton(medium);
@@ -91,7 +101,6 @@ const appendData = (data,parent) => {
 
         div.addEventListener("click", () => {
             localStorage.setItem("BellVita_Product", JSON.stringify(elem));
-            window.location.href = "productDetail.html";
         })
 
         parent.append(div);

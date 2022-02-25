@@ -3,6 +3,10 @@ import bottomPanel from "../../components/bottompanel.js"
 
 let nav = document.querySelector("#bellavitanav");
     nav.innerHTML = navbar();
+    
+    document.getElementById("allProducts").addEventListener("click", () => {
+        window.location.href= '../Products/allProducts.html';
+    })
 
     let cartArray = [{
         "Category": "face",

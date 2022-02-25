@@ -3,6 +3,9 @@ import navbar from "../../components/navbar.js"
 import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
+document.getElementById("allProducts").addEventListener("click", () => {
+  window.location.href= '../Products/allProducts.html';
+})
 
 let data = JSON.parse(localStorage.getItem("BellVita_Product"));
 
@@ -351,3 +354,16 @@ rightButton.addEventListener("click", () => {
     
     }
 })
+
+
+//Afer Add to Cart button clickin product will be added to the cart;
+let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
+
+document.getElementById("ga_addCart").addEventListener("click", () => {
+  cartFun(data);
+})
+
+const cartFun = (data) => {
+  cartArr.push(data);
+  localStorage.setItem("BellaVitaCart", JSON.stringify(cartArr));
+}
