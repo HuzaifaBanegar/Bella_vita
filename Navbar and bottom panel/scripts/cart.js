@@ -7,35 +7,24 @@ let nav = document.querySelector("#bellavitanav");
     document.getElementById("allProducts").addEventListener("click", () => {
         window.location.href= '../Products/allProducts.html';
     })
+    // ----------------------------------------------------------------------------Cart calculations
+    let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
+    console.log(cartArray);
 
-    let cartArray = [{
-        "Category": "face",
-        "Name": "Exfoliate Face and Body Scrub Grit, Skin Brightening, De-Tan Removal - 75gm",
-        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Exfoliate-01_1024x1024.jpg?v=1626345623",
-        "Price1": "185",
-        "Price": "165",
-        "Rating": "5",
-        "Review": "1524",
-        "Qty": 1
-    },
-    {
-        "Category": "hair",
-        "Name": "Growth Protein Hair Spa Mask For Hairfall Control, Frizzy Hair Cream, Color Damaged Hair Repair & Growth With Keratin, Biotin, Argan, Onion, Tea Tree & Coffee, 225 g",
-        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/HairMasque-1_1024x1024.jpg?v=1632814654",
-        "Price1": "458",
-        "Price": "308",
-        "Rating": "5",
-        "Review": "398",
-        "Qty": 1
-    }];
+    let nos= cartArray.length;
+    var subtotal = cartArray.reduce(function (ac, el) {
+        return ac + Number(el.Price*el.Qty);//Price
+    }, 0);
+    console.log(+(subtotal))
+    document.querySelector("#cartValue").textContent=`Rs.${subtotal}`
+
     let parent = document.querySelector("#product_content");
     parent.style.height = "100%"
 
-    // appendCartarray(cartArray, parent);
-
     const appendCartarray = (cartArray, parent) => {
-        cartArray.map((el) => {
-            console.log(el.Name)
+        parent.innerHTML=""
+        cartArray.map((el, index) => {
+           console.log(el.Qty, el.Price)
             let div = document.createElement("div");
             div.style.display = "flex";
             div.style.justifyContent = "space-between"
@@ -59,10 +48,55 @@ let nav = document.querySelector("#bellavitanav");
             name.style.fontSize = "13px"
 
             let price = document.createElement("p");
-            price.textContent = `Rs. ${el.Price}`;
+            price.textContent = `Rs. ${el.Price*el.Qty}`;
 
+            let quanDiv= document.createElement("div");
+            quanDiv.style.display="flex";
+            quanDiv.style.width="100px"
+            quanDiv.style.marginTop="10px"
+            // quanDiv.justifyContent="space-between";
 
-            div2.append(name, price);
+            let inc= document.createElement("button");
+            inc.textContent="+";
+            inc.style.width="50px"
+            inc.style.fontSize="20px"
+            inc.style.backgroundColor="white"
+            inc.style.border="0.5px solid black"
+            let inputval= document.createElement("div");
+            inputval.textContent=el.Qty;
+            inputval.style.width="50px"
+            inputval.style.textAlign="center"
+            let dec= document.createElement("button");
+            dec.textContent="-"; 
+            dec.style.width="50px"
+            dec.style.fontSize="20px"
+            dec.style.backgroundColor="white"
+            dec.style.border="0.5px solid black"
+
+            //-------------------------------------------quantity inc/dec
+
+            inc.addEventListener("click",()=>{
+                addFunction(el)
+            })
+
+            dec.addEventListener("click", ()=>{
+               decFunction(el)
+            })
+
+            
+            quanDiv.append(dec, inputval, inc);
+
+         
+            var remove = document.createElement("button");
+            remove.textContent = "X Remove ";
+            remove.style.backgroundColor="white";
+            remove.style.border="none"
+            remove.style.marginTop="10px"
+            remove.addEventListener("click", ()=>{
+                removeFunction(index);
+            });
+//Qty: 1
+            div2.append(name, price,quanDiv, remove);
 
             div.append(div1, div2);
 
@@ -70,6 +104,52 @@ let nav = document.querySelector("#bellavitanav");
         })
     }
     appendCartarray(cartArray, parent);
+
+    function removeFunction(index) {
+        console.log(index)
+        cartArray.splice(index, 1);
+        localStorage.setItem("BellaVitaCart", JSON.stringify(cartArray));
+        appendCartarray(cartArray, parent);
+        console.log(cartArray);
+        let nos= cartArray.length;
+        var subtotal = cartArray.reduce(function (ac, el) {
+        return ac + Number(el.Price*el.Qty);//Price
+         }, 0);
+         console.log(+(subtotal))
+    document.querySelector("#cartValue").textContent=`Rs.${subtotal}`
+    }
+
+    function addFunction(el){
+        el.Qty++;
+        appendCartarray(cartArray, parent)
+                
+        // inputval.textContent=el.Qty
+        // price.textContent=el.Price*el.Qty
+        var subtotal = cartArray.reduce(function (ac, el) {
+            return ac + Number(el.Price*el.Qty);//Price
+             }, 0);
+             console.log(+(subtotal))
+        document.querySelector("#cartValue").textContent=`Rs.${subtotal}` 
+    }
+
+    function decFunction(el){
+        el.Qty--;
+        if(el.Qty==0)
+        {
+            el.Qty=1  
+        }
+        else
+        {
+            appendCartarray(cartArray, parent)
+            // inputval.textContent=el.Qty;
+            // price.textContent=el.Price*el.Qty
+            var subtotal = cartArray.reduce(function (ac, el) {
+                return ac + Number(el.Price*el.Qty);//Price
+                 }, 0);
+                 console.log(+(subtotal))
+            document.querySelector("#cartValue").textContent=`Rs.${subtotal}`
+        }
+    }
 
     import {bestsellerList} from "../../components/bestseller.js";
     var result = bestsellerList();

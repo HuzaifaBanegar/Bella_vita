@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="../components/navstyle.css">
     <link rel="stylesheet" href="../components/bottompanel.css">
     <title>Your Shopping Cart</title>
-    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+    <link rel="icon" type="image/x-icon"
+        href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
     <style>
         #theCart_div {
             width: 70%;
-            margin:2.5% auto;
+            margin: 2.5% auto;
             /* border: 1px solid red; */
         }
 
@@ -95,21 +100,27 @@
             font-weight: bold;
             text-align: center;
         }
-        #huz_bestseller, #huz_newarrival, #huz_combolist{
+
+        #huz_bestseller,
+        #huz_newarrival,
+        #huz_combolist {
             padding: 30px;
             /* border: 1px solid black; */
         }
-        #best_seller_slider, #new_arrival_slider, #combolist_slider{
+
+        #best_seller_slider,
+        #new_arrival_slider,
+        #combolist_slider {
             display: flex;
             width: 65%;
             overflow-x: auto;
             overflow-y: hidden;
-            margin: auto ;
+            margin: auto;
             height: 420px;
             /* justify-content: center; */
         }
 
-        #best_seller_slider::-webkit-scrollbar{
+        #best_seller_slider::-webkit-scrollbar {
             height: 5px;
         }
 
@@ -118,7 +129,7 @@
             /* background-color: grey; */
         }
 
-        #best_seller_slider::-webkit-scrollbar-thumb{
+        #best_seller_slider::-webkit-scrollbar-thumb {
             height: 5px;
             background-color: black;
         }
@@ -213,8 +224,9 @@
         #ga_addToCart:focus {
             outline: none;
         }
+
         .huz_heading {
-            width:70%;
+            width: 70%;
             padding: 15px;
             margin: auto;
         }
@@ -244,7 +256,7 @@
                     <div class="payemnt-details-box">
                         <div class="total">
                             <p>Total:</p>
-                            <p id="cartValue">Rs.</p>
+                            <p id="cartValue"></p>
                         </div>
                         <p>or 4 interest-free payments of Rs. 399.00 with
                             <span><img src="https://cdn.sezzle.in/branding/2.0/Sezzle_Logo_FullColor.svg"
@@ -293,7 +305,7 @@
 </html>
 
 <script src="./scripts/cart.js" type="module">
-    
+
 // =======
 // <script type="module">
 //     import navbar from "./components/navbar.js"
