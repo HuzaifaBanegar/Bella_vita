@@ -17,7 +17,7 @@ const navbar = () => {
     <div id="huznav">
         <a><img src="../../Navbar and bottom panel/images/Screenshot (109).png"></a>
         <div class="huz_content">
-            <p onclick="window.location.href='../../Products/allProducts.html'>ALL PRODUCTS</p>
+            <p id="allProducts">ALL PRODUCTS</p>
             <p>BESTSELLERS</p>
             <p>OFFERS</p>
             <p>SELFIE SWITCH</p>
@@ -39,6 +39,3 @@ const navbar = () => {
     </div>`
 } 
 export default navbar;
-
-
-    
