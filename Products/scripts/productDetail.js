@@ -9,6 +9,9 @@ document.getElementById("allProducts").addEventListener("click", () => {
 
 let data = JSON.parse(localStorage.getItem("BellVita_Product"));
 
+document.querySelector("title").innerText = data.Name;
+
+//Photos of the product
 let mainImage = document.getElementById("featured");
 // console.log(mainImage.src)
 mainImage.src = data.Img_url;
