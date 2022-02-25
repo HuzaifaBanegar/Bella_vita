@@ -30,6 +30,7 @@ body {
     font-size: 13px;
     font-weight: lighter;
     justify-content: space-between;
+    cursor: pointer;
     /* border: 1px solid red; */
     padding: 15px 0px;
 }
@@ -41,6 +42,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin-left: 5%;
+    cursor: pointer;
 }
 
 .navicons img {
@@ -49,7 +51,7 @@ body {
     margin-right: 15px;
 }
 
-@media only screen and (max-width:1499px) and (min-width:1200px) {
+@media only screen and (max-width:1499px) and (min-width:1024px) {
     .huz_content {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -57,7 +59,7 @@ body {
     }
 }
 
-@media only screen and (max-width:1199px) {
+@media only screen and (max-width:1023px) {
     #huznav {
         display: none;
     }

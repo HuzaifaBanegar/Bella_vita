@@ -8,7 +8,7 @@ const navbar = () => {
             <img src="../../Navbar and bottom panel/images/743930_button_512x512.png">
             <img src="../../Navbar and bottom panel/images/magnifying-glass-icon-13.png">
         </div>
-        <div><img src="../../Navbar and bottom panel/images/Screenshot (109).png"></div>
+        <div style="cursor: pointer;" onclick="window.location.href='index.html'"><img src="../../Navbar and bottom panel/images/Screenshot (109).png"></div>
         <div class="navmoblast">
             <img src="../../Navbar and bottom panel/images/OIP.jpg">
             <img src="../../Navbar and bottom panel/images/img_290616.png">
