@@ -39,7 +39,9 @@ body{
 #content_bottom h4{
     margin-bottom: 20px;
     text-decoration: underline;
-    text-underline-offset: 10px;
+    text-underline-offset: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
 #content_bottom div{
     padding: 20px;
