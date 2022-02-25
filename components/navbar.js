@@ -8,14 +8,14 @@ const navbar = () => {
             <img src="../../Navbar and bottom panel/images/743930_button_512x512.png">
             <img src="../../Navbar and bottom panel/images/magnifying-glass-icon-13.png">
         </div>
-        <div><img src="../../Navbar and bottom panel/images/Screenshot (109).png" style="cursor: pointer;" onclick="window.location.href='index.html'"></div>
+        <div><img src="../../Navbar and bottom panel/images/Screenshot (109).png" style="cursor:pointer" onclick="window.location.href='../../index.html'"></div>
         <div class="navmoblast">
             <img src="../../Navbar and bottom panel/images/OIP.jpg">
             <img src="../../Navbar and bottom panel/images/img_290616.png">
         </div>
     </div>
     <div id="huznav">
-        <a><img src="../../Navbar and bottom panel/images/Screenshot (109).png"></a>
+        <a href="../../index.html"><img style="cursor:pointer" src="../../Navbar and bottom panel/images/Screenshot (109).png"></a>
         <div class="huz_content">
             <p id="allProducts">ALL PRODUCTS</p>
             <p>BESTSELLERS</p>

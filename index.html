@@ -14,8 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./components/navstyle.css">
-    <link rel="stylesheet" href="./components/bottompanel.css">
+    <link rel="stylesheet" href="components/navstyle.css">
+    <link rel="stylesheet" href="components/bottompanel.css">
 
     <title>Bella Vita Organic | Natural Skin</title>
     <style>
@@ -506,25 +506,25 @@
         </div>
         <!-- End of carousal ------------------------------------------------------------------>
         <div id="below_carousal">
-            <div><img src="images\Screenshot (113).png">
+            <div><img src=".//Navbar and bottom panel/images/Screenshot (113).png">
                 <div>
                     <p>Ayurveda Certified</p>
                     <p>Natural& Ayurvedic Products</p>
                 </div>
             </div>
-            <div><img src="images\Screenshot (114).png">
+            <div><img src="./Navbar and bottom panel/images/Screenshot (114).png">
                 <div>
                     <p>Rapid Delivery</p>
                     <p>Lesser Delivery Time</p>
                 </div>
             </div>
-            <div><img src="images\Screenshot (115).png">
+            <div><img src=".//Navbar and bottom panel/images/Screenshot (115).png">
                 <div>
                     <p>Customer Helpline</p>
                     <p>Mon-Sun 10:30am - 7pm</p>
                 </div>
             </div>
-            <div><img src="images\Screenshot (116).png">
+            <div><img src=".//Navbar and bottom panel/images/Screenshot (116).png">
                 <div>
                     <p>Bella Cash</p>
                     <p>Buy More, Earn More</p>
@@ -562,7 +562,7 @@
         </div>
         <!-- -------------------------------------------------------------------------------- viddeo section-->
         <div id="ga_slide_wrapper">
-            <img src="images\arrow-left.png" id="slideleft" class="ga_arrow">
+            <img src=".//Navbar and bottom panel/images/arrow-left.png" id="slideleft" class="ga_arrow">
             <div id="ga_slider">
                 <video class="ga_thumbnail"
                     src="https://cdn4.fireworktv.com/medias/2021/11/8/1636362847-ayefkiob/watermarked/540/PapyBlem-Version2.mp4"
@@ -610,7 +610,7 @@
                     src="https://cdn4.fireworktv.com/medias/2021/11/2/1635839707-phktnlsq/watermarked/540/5-NightGlow-Version2.mp4"
                     type="video/mp4" loop muted></video>
             </div>
-            <img src="images\arrow-right.png" id="slideRight" class="ga_arrow">
+            <img src=".//Navbar and bottom panel/images/arrow-right.png" id="slideRight" class="ga_arrow">
         </div>
         <!-- ------------------------------------------------------------------------------Media Coverage -->
         <div id="huz_mediacoverage">
@@ -779,13 +779,13 @@
     </div>
     <p style="text-align: center;">Exclusive rewards, birthday gifts and more</p>
     <div id="rewardgrid">
-        <img src="images\Screenshot (119).png">
+        <img src=".//Navbar and bottom panel/images/Screenshot (119).png">
     </div>
     <div class="huz_heading">
         <h3>HOW TO REDEEM</h3>
     </div>
     <div id="howtoredeem">
-        <img src="images\Screenshot (120).png">
+        <img src=".//Navbar and bottom panel/images/Screenshot (120).png">
         <button> SIGN UP</button>
     </div>
 
@@ -805,7 +805,7 @@
                     <li>Pinch, tap, zoom or scroll for convenient shopping</li>
                     <li>Personalised Experience</li>
                     <li>100% Safe & Secure Payment</li>
-                    <img src="images\Screenshot (111).png">
+                    <img src="..//Navbar and bottom panel/images/Screenshot (111).png">
                 </ul>
             </div>
         </div>
@@ -816,81 +816,8 @@
 </body>
 
 </html>
-<script type="module">
-    import navbar from "./components/navbar.js"
-    // console.log(navbar)
+<script src="./components/index.js" type="module"></script>
 
-    let nav = document.querySelector("#bellavitanav");
-    nav.innerHTML = navbar();
-
-    document.getElementById("allProducts").addEventListener("click", () => {
-    window.location.href= '../../Products/allProducts.html';
-})
-
-    let thumbnail = document.getElementsByClassName("ga_thumbnail");
-    // console.log(thumbnail)
-
-    let leftButton = document.getElementById("slideleft");
-    let rightButton = document.getElementById("slideRight");
-
-    leftButton.addEventListener("click", () => {
-
-        for (let i = 0; i < thumbnail.length; i++) {
-
-            document.getElementById("ga_slider").scrollLeft -= 20;
-
-        }
-    })
-
-    rightButton.addEventListener("click", () => {
-
-        for (let i = 0; i < thumbnail.length; i++) {
-
-            document.getElementById("ga_slider").scrollLeft += 20;
-
-        }
-    })
-
-    // let thumbnail = document.getElementsByClassName("ga_thumbnail");
-    // console.log(clip)
-    for (var i = 0; i < thumbnail.length; i++) {
-        thumbnail[i].addEventListener("mouseenter", function (e) {
-            e.toElement.play()
-        })
-        thumbnail[i].addEventListener("mouseout", function (e) {
-            e.srcElement.pause()
-        })
-
-    }
-
-    // --------------------------------------------------------------------------------------BEST SELLER
-    import {bestsellerList,newArrivalList, comboList} from "./components/bestseller.js";
-    var result = bestsellerList();
-    // console.log(result)
-
-    let parent1 = document.querySelector("#best_seller_slider");
-    import { appendData } from "./scripts/sliderData.js";
-    appendData(result, parent1);
-    // ---------------------------------------------------------------------------------
-    var result2= newArrivalList();
-    let parent2= document.querySelector("#new_arrival_slider");
-    console.log(result2);
-    appendData(result2, parent2);
-
-    // ------------------------------------------------------------------------------------
-
-    var result3= comboList();
-    let parent3= document.querySelector("#combolist_slider");
-    appendData(result3, parent3)
-
-    //------------------------------------------------------------------------------
-
-    import bottompanel from "./components/bottompanel.js";
-
-    let thelastpanel = document.querySelector("#huz_bottom_panel");
-    thelastpanel.innerHTML = bottompanel();
-
-</script>
 <!-- https://cdn.shopify.com/s/files/1/0054/6665/2718/files/874-874-01.png?v=1645425693 -->
 
 <!-- Videos -->
