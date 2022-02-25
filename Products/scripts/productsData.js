@@ -76,7 +76,7 @@ const allProducts = () => {
       Category: "skin",
       Name: "Glowey Face Pack, Scrub & Face Wash 3 in 1 for Glowing Skin & Radiance Unisex Ayurveda, 100 g With Free Face Pack Applicator Brush",
       Img_url:
-        "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowey-01_3122f22c-16b1-4dfe-ab7e-f5a4e16c2aaa_1024x1024.jpg?v=1631708103",
+        "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowey-01_1024x1024.jpg?v=1645601062",
       Price: "298",
       Price1: "369",
       Rating: "4.5",
@@ -232,7 +232,7 @@ const allProducts = () => {
         Category: "face",
         Name: "Glowey Face Pack, Scrub & Face Wash 3 in 1 for Glowing Skin & Radiance Unisex Ayurveda, 100 g With Free Face Pack Applicator Brush",
         Img_url:
-            "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowey-01_3122f22c-16b1-4dfe-ab7e-f5a4e16c2aaa_1024x1024.jpg?v=1631708103",
+            "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowey-01_1024x1024.jpg?v=1645601062",
         Price1: "454",
         Price: "309",
         Rating: "5",
