@@ -87,9 +87,11 @@ const appendData = (data,parent) => {
         medium.addListener(displayButton);
 
         div.append(img_div,div2,bottom_button);
+        div.className = "ga_sliderDivs";
 
         div.addEventListener("click", () => {
             localStorage.setItem("BellVita_Product", JSON.stringify(elem));
+            window.location.href = "productDetail.html";
         })
 
         parent.append(div);
