@@ -26,15 +26,27 @@
             justify-content: space-between;
             padding: 10px;
         }
+        
 
         #the_main_div {
             display: flex;
             justify-content: space-between;
         }
+        @media only screen and (max-width:1050px){
+             #the_main_div{
+                 flex-direction: column;
+             }
+            
+            }
 
         #products_div {
             width: 60%;
             height: 100%;
+        }
+        @media only screen and (max-width:1050px){
+            #products_div{
+                width: 100%;
+            }
         }
 
         #product_content {
