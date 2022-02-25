@@ -3,7 +3,7 @@ const bottomPanel= ()=>{
     <div id="huz_quicklinks"><h3>Quick Links</h3></div>
        <div id="huz_availability">
            <p>We are also available on Playstore and AppStore</p>
-           <img src="./images/Screenshot (111).png">
+           <img src="../../Navbar and bottom panel/images/Screenshot (111).png">
         </div>
        <div id="content_bottom">
            <div>
@@ -47,6 +47,6 @@ const bottomPanel= ()=>{
                 <button>SUBMIT</button>
             </div>
        </div>
-       <div id="last_div_ever"><img src="./images/Screenshot (112).png"></div>`
+       <div id="last_div_ever"><img src="../../Navbar and bottom panel/images/Screenshot (112).png"></div>`
 }
 export default bottomPanel;
