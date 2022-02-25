@@ -14,7 +14,7 @@ body {
 #ga_topbar > img {
     width: 100%;
 }
-#ga_topbar > h2 {
+#ga_topbar > h3 {
     margin-bottom: 20px;
 }
 #ga_main {
@@ -81,7 +81,7 @@ body {
     height: 30%;
 }
 #ga_name{
-    height: 32%;
+    height: 28%;
     font-size: medium;
     overflow: hidden;
 }
