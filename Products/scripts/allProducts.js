@@ -15,6 +15,9 @@ document.getElementById("ga_footer").innerHTML = bottomPanel();
 document.getElementById("bestSeller").addEventListener("click", () => {
     window.location.href = "./bestseller.html"
 })
+document.getElementById("bestSeller2").addEventListener("click", () => {
+    window.location.href = "./bestseller.html"
+})
 document.getElementById("cartIcon").addEventListener("click", () => {
     window.location.href = "../../Navbar and bottom panel/cart.html";
 })
@@ -54,3 +57,69 @@ const mediumMedia = (x) => {
 let medium = window.matchMedia("(max-width: 1025px)");
 // mediumMedia(medium);
 medium.addListener(mediumMedia);
+
+
+
+//Filter by Product Category
+let skin = document.getElementById("ga_skin").addEventListener("click", () => {
+    var new_data = [];
+
+    data.map((elem) => {
+
+        if(elem.Category == "skin") {
+            appendTo.innerHTML = "";
+            new_data.push(elem);
+        }
+    })
+
+    appendData(new_data,appendTo,cartFun);
+    // console.log(new_data)
+})
+
+let body = document.getElementById("ga_body").addEventListener("click", () => {
+    var new_data = [];
+
+    data.map((elem) => {
+
+        if(elem.Category == "body") {
+            appendTo.innerHTML = "";
+            new_data.push(elem);
+        }
+    })
+
+    appendData(new_data,appendTo,cartFun);
+    // console.log(new_data)
+})
+
+
+let hair = document.getElementById("ga_hair").addEventListener("click", () => {
+    var new_data = [];
+
+    data.map((elem) => {
+
+        if(elem.Category == "hair") {
+            appendTo.innerHTML = "";
+            new_data.push(elem);
+        }
+    })
+
+    appendData(new_data,appendTo,cartFun);
+    // console.log(new_data)
+})
+
+
+let face = document.getElementById("ga_face").addEventListener("click", () => {
+    var new_data = [];
+
+    data.map((elem) => {
+
+        if(elem.Category == "face") {
+            appendTo.innerHTML = "";
+            new_data.push(elem);
+        }
+    })
+
+    appendData(new_data,appendTo,cartFun);
+    // console.log(new_data)
+    
+})
