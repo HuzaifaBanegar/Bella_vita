@@ -114,6 +114,15 @@ let nav = document.querySelector("#bellavitanav");
          }, 0);
          console.log(+(subtotal))
     document.querySelector("#cartValue").textContent=`Rs.${subtotal}`
+
+
+
+    // showing number of items present in the cart on the navbar;
+    let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+
+    document.getElementById("ga_cartItems1").innerText = carArrLength.length
+    document.getElementById("ga_cartItems2").innerText = carArrLength.length
+
     }
 
     function addFunction(el){
@@ -178,3 +187,10 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
          }
      });
 })
+
+
+// showing number of items present in the cart on the navbar;
+let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+
+document.getElementById("ga_cartItems1").innerText = carArrLength.length
+document.getElementById("ga_cartItems2").innerText = carArrLength.length

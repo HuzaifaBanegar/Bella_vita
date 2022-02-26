@@ -34,6 +34,13 @@ let data = bestsellerList();
 const cartFun = (data) => {
     cartArr.push(data);
     localStorage.setItem("BellaVitaCart", JSON.stringify(cartArr));
+
+
+    // showing number of items present in the cart on the navbar;
+let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+
+document.getElementById("ga_cartItems1").innerText = carArrLength.length
+document.getElementById("ga_cartItems2").innerText = carArrLength.length
 }
 
 appendData(data,appendTo,cartFun);
@@ -141,3 +148,10 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
          }
      });
 })
+
+
+// showing number of items present in the cart on the navbar;
+let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+
+document.getElementById("ga_cartItems1").innerText = carArrLength.length
+document.getElementById("ga_cartItems2").innerText = carArrLength.length

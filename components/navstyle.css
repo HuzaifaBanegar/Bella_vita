@@ -71,6 +71,23 @@ body {
     width: 20%;
 }
 
+.cartCount {
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
+}
+
+.cartCount > div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: black;
+    margin: -15px 0 0 15px;
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+
 @media only screen and (max-width:1499px) and (min-width:1024px) {
     .huz_content {
         display: grid;
