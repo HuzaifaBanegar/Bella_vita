@@ -11,6 +11,7 @@ body {
 #navmobile {
     display: none;
     background-color: white;
+    overflow-x: hidden;
 }
 
 #headnav {

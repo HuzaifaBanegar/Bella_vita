@@ -33,8 +33,11 @@ let sidebar = document.getElementById("ga_sidebar");
 const mediumMedia = (x) => {
     if(x.matches) {
         sidebar.innerHTML = "";
+        console.log("hello");
+        sidebar.width = "0px";
     }
 }
 
 let medium = window.matchMedia("(max-width: 1025px)");
 // mediumMedia(medium);
+medium.addListener(mediumMedia);
