@@ -58,20 +58,15 @@ let nav = document.querySelector("#bellavitanav");
 
             let inc= document.createElement("button");
             inc.textContent="+";
-            inc.style.width="50px"
-            inc.style.fontSize="20px"
-            inc.style.backgroundColor="white"
-            inc.style.border="0.5px solid black"
+            inc.setAttribute("class","the_inc_dec_button")
             let inputval= document.createElement("div");
             inputval.textContent=el.Qty;
             inputval.style.width="50px"
             inputval.style.textAlign="center"
+            inputval.style.border="0.1px solid gray"
             let dec= document.createElement("button");
             dec.textContent="-"; 
-            dec.style.width="50px"
-            dec.style.fontSize="20px"
-            dec.style.backgroundColor="white"
-            dec.style.border="0.5px solid black"
+            dec.setAttribute("class","the_inc_dec_button")
 
             //-------------------------------------------quantity inc/dec
 
