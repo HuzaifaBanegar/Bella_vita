@@ -1,5 +1,5 @@
-import { allProducts } from "./productsData.js";
 import { appendData, sortProducts } from "./productScripts.js";
+import {bestsellerList} from "../../components/bestseller.js"
 
 
 let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
@@ -11,12 +11,12 @@ import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 
-document.getElementById("bestSeller").addEventListener("click", () => {
-    window.location.href = "./bestseller.html"
+document.getElementById("allProducts").addEventListener("click", () => {
+    window.location.href = "./allProducts.html"
 })
 
 let appendTo = document.getElementById("ga_products");
-let data = allProducts();
+let data = bestsellerList();
 
 
 // adding items to the cart

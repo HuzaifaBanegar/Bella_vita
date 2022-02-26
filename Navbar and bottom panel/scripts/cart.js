@@ -7,6 +7,9 @@ let nav = document.querySelector("#bellavitanav");
     document.getElementById("allProducts").addEventListener("click", () => {
         window.location.href= '../Products/allProducts.html';
     })
+    document.getElementById("bestSeller").addEventListener("click", () => {
+        window.location.href= '../Products/bestseller.html';
+    })
     // ----------------------------------------------------------------------------Cart calculations
     let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
     console.log(cartArray);

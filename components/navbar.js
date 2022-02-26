@@ -18,7 +18,7 @@ const navbar = () => {
         <a href="../../index.html"><img style="cursor:pointer" src="../../Navbar and bottom panel/images/Screenshot (109).png"></a>
         <div class="huz_content">
             <p id="allProducts">ALL PRODUCTS</p>
-            <p>BESTSELLERS</p>
+            <p id="bestSeller">BESTSELLERS</p>
             <p>OFFERS</p>
             <p>SELFIE SWITCH</p>
             <p>BUILD A BOX</p>
