@@ -121,4 +121,5 @@ let face = document.getElementById("ga_face").addEventListener("click", () => {
 
     appendData(new_data,appendTo,cartFun);
     // console.log(new_data)
+    
 })
