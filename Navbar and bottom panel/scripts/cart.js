@@ -89,9 +89,8 @@ let nav = document.querySelector("#bellavitanav");
          
             var remove = document.createElement("button");
             remove.textContent = "X Remove ";
-            remove.style.backgroundColor="white";
-            remove.style.border="none"
-            remove.style.marginTop="10px"
+            remove.setAttribute("id", "huz_remove_button")
+            
             remove.addEventListener("click", ()=>{
                 removeFunction(index);
             });
