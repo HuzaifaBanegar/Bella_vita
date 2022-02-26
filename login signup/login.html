@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <style>
+        #return{
+            display: flex;
+            justify-content: space-around;
+            background-color:rgb(250,250,250);
+
+            border: 1px solid hsl(0,0%,90%);
+            border-left: none;
+            border-right: none;
+        }
+        #baap{
+            margin: auto;
+            width: 80%;
+            border-bottom: 1px solid hsl(0,0%,90%);
+            padding-bottom: 50px;
+        }
+        h5{
+            margin-bottom: 1%;
+        }
+        #sub{
+            text-align: center;
+            width: 150px;
+            height: 40px;
+            margin-top: 20px;
+            color: white;
+            background-color:black;
+            border: none;
+            box-shadow: inset 0 0 0 lightGREEN;
+            transition: ease-in-out 0.3s;
+             outline: none;
+             font-size: large;
+             
+        }
+        #sub:hover{
+           background-color: lightgreen;
+           cursor: pointer;
+           
+        }
+        form>h5{
+            margin-bottom: 1%;
+            font-family: Museo Sans,sans-serif!important;
+        }
+        input{
+            width: 300px;
+            height: 25px;
+        }
+        #forget{
+            display: flex;
+            gap: 10px;;
+
+        }
+        #submit{
+            text-align: center;
+            width: 200px;
+            height: 35px;
+            margin-top: 20px;
+            color: white;
+            background-color:lightgreen;
+            border: none;
+            box-shadow: inset 0 0 0 #f9e506;
+            transition: ease-in-out 0.3s;
+             outline: none;
+             font-size:medium;
+        }
+        *{
+            font-family:Museo Sans,sans-serif!important ;
+        }
+        #submit:hover{
+           background-color:black;
+           cursor: pointer;
+           
+        }
+        #fromstore{
+               display: flex;
+               grid-template-columns: repeat(3,1fr);
+               justify-content: space-between;
+               border: 1px solid red;
+        }
+        #suggestion{
+             height: 40px;
+             background-color: rgb(220,53,69);
+         }
+
+         @media only screen and (min-width:400px) and (max-width:700px){
+              #baap{
+                  display: grid;
+                  grid-template-columns:repeat(1,1fr) ;
+              }
+         }
+    </style>
+</head>
+<body>
+  <div id="baap">
+
+    <div style="display: flex;gap:5px"><p>Home</p>
+    <p style="color:darkgray">>  Account</p></div>
+    <div><h3>ACCOUNT</h3></div>
+  <div id="return">
+      <h4>RETURNING CUSTOMER</h4>
+      <h4>NEW CUSTOMER</h4>
+  </div>
+
+  <div id="suggestion"></div>
+  <div id="fromstore"> <form action="">
+        
+
+    <h5>Email Address</h5>
+    <input type="email" id="email">
+    <h5>Password</h5>
+    <input type="password" id="pass"><hr style="border: 0ch;">
+    <input id="sub" type="submit" value="LOGIN"  >
+</form>
+<div style="margin:auto" ><div style="background-color:grey;width:1px; height:150px;margin: auto;"></div>
+<div style="width:40px; height:40px;border-radius:50%;text-align: center;padding-top: 20px;border:1px solid grey;color: grey;">OR</div>
+<div style="background-color:grey;width:1px; height:150px;margin: auto;"></div>
+</div>
+  <div style="margin:auto;justify-content:center;">
+      <div style="text-align: center;border:1px solid yellow;;"> <p>Register with us for a faster checkout,<br>
+        to track the status of your order and more.</p>
+        <input onclick="window.location.href='signup.html'" id="submit" type="submit" value="CREATE AN ACCOUNT"></div>
+   
+  </div>
+   </div>
+   
+    <div id="forget">
+        <p>Forget your password?</p>
+        <p>or</p>
+        <p onclick="">Return to Store</p>
+
+    </div>
+<div>
+</body>
+</html>
+
+<script>
+    document.getElementById("suggestion").style.display="none"
+    document.querySelector("form").addEventListener("submit", login)
+    var arr=JSON.parse(localStorage.getItem("detail"))
+      console.log(arr)
+    function login(event){
+        event.preventDefault()
+        document.getElementById("suggestion").style.display="block"
+        document.getElementById("suggestion").innerHTML=""
+        var email=document.getElementById("email").value
+        var password=document.getElementById("pass").value
+         
+         var count=0
+        for(var i=0; i<arr.length; i++){
+                    if(arr[i].email==email && arr[i].pass==password){
+                       count++
+                       break;
+                    }
+        }
+        if(email.length==0 && password.length==0){
+                            let div= document.createElement("div");
+
+                            let p=document.createElement("p")
+                            p.innerHTML="Empty email or password."
+                            p.style.textAlign="left";
+                            p.style.color="white"
+                            p.style.fontSize="large"
+                            p.style.margin="1px"
+
+                            div.append(p)
+                            document.getElementById("suggestion").append(div)
+                        }
+        else if(count==1){
+            alert("login Successfully")
+            window.location.href="home.html"
+        }
+        else{
+            alert("Wrong crendential")
+        }
+
+
+
+        
+    }
+</script>

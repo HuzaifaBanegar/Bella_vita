@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        *{
+            font-family:Museo Sans,sans-serif!important ;
+        }
+        #boss{
+            display: grid;
+            grid-template-columns:500px 400px;
+            width: 85%;
+            margin: auto;
+            /* border: 1px solid green; */
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+        #email,#phone,#add,#location{
+            margin-top: 30px;
+            width: 98.5%;
+            height: 35px;
+            
+        }
+        #check{
+            margin-top: 30px;
+            
+        }
+        #payment{
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: 48px;
+            border: none;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        #formsDAD{
+            /* border: 1px solid orange; */
+            
+        }
+        #name,#last{
+            margin-top: 30px;
+            width: 47%;
+            height: 35px;
+        }
+        #city,#state,#pin{
+            height:35px ;
+            width: 33%;
+        }
+        #cartItems{
+              
+              
+              /* border: 1px solid red; */
+        }
+        #upperwala{
+           
+         
+            width: 100%;
+        
+        }
+        #status{
+            margin: auto;
+            /* border: 1px solid purple; */
+            height: 50px;
+            display: flex;
+            width: 40%;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        #status>#circle{
+            width: 20px;
+            height: 20px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            text-align: center;
+            
+        }
+        #status>#line{
+            width: 50px;
+            background-color: black;
+            height: 1px;
+            margin-top: 10px;
+        }
+       #status>#circle1{
+            width: 20px;
+            height: 20px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            text-align: center;
+            background-color: mediumseagreen;
+            color: white;
+           
+        }
+        @media only screen and (max-width:960px){
+            #boss{
+                grid-template-columns: 500px;
+            }
+        }
+        #maal{
+            border: 1px solid red;
+            /* text-align: center; */
+        }
+        #div1{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            border: 1px solid blue;
+           
+        }
+        #discount{
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: auto;
+            height:358px;
+            background-color: rgb(243,199,70);
+            grid-gap: 25px;
+            
+
+        }
+        #discount::-webkit-scrollbar{
+            height: 5px;
+        }
+        #discount::-webkit-scrollbar-track{
+            height: 5px;
+        }
+        #discount::-webkit-scrollbar-thumb{
+            height: 5px;;
+            background-color: black;
+        }
+        #discount>div{
+            background-color: white;
+            margin-top: 20px;
+            padding: 2px;
+            text-align: center;
+            
+            border-radius: 10px;
+        }
+        
+       
+
+    </style>
+</head>
+<body>
+    <div id="upperwala">
+        <img style="height: 250px; width:100%" src="https://images-na.ssl-images-amazon.com/images/S/abs-image-upload-na/9/AmazonStores/A21TJRUUN4KGV/b1598cd655f2f398a1fef6b40752d118.w1200.h400.jpg" alt="">
+    </div>
+    <div id="status">
+        <div id="circle1">></div>
+        <div id="line"></div>
+        <div style="box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;" id="circle1">></div>
+        <div id="line"></div>
+        <div  id="circle">></div>
+        <div id="line"></div>
+        <div  id="circle">></div>
+    </div>
+    <div></div>
+    <div id="boss">
+       
+    <div id="formsDAD">
+    <form action="">
+        <div style="display:flex ;border: 1px solid red; justify-content: space-between;">
+            <p>CONTACT INFORMATION </p>
+            <P>Already have an account?<a href="login.html">LOG IN</a></P>
+        </div>
+        <input id="email" type="email" placeholder="Email"><br>
+        <h5>Enter a Valid Email</h5>
+        <input id="check" type="checkbox">Email/SMS me with news and offers
+        <hr style="border-top:1px dotted black">
+        <p>SHIPPING ADDRESS</p>
+        <div style="display:flex; justify-content:space-between"><input id="name" type="text" placeholder="First name">
+            
+            <input id="last" type="text " placeholder="Last name"></div>
+        <br>
+
+        <input id="add" type="text" placeholder="Flat,House NO, Bulding, Comapany,Apartment"><br>
+         <input id="location" type="text" placeholder="Area,Colony,Street,Sector,Village"><br>
+         <div style="display:flex">
+         <input id="city" type="text" placeholder="City">
+         <select name="" id="state">
+             <option value="">State</option>
+             <option value="">Andaman and Nicobar Islands</option>
+             <option value="">Andhra Pradesh</option>
+             <option value="">Arunachal Pradesh</option>
+             <option value="">Assam</option>
+             <option value="">Bihar</option>
+             <option value="">Chandigarh</option>
+             <option value="">Chhatisgarh</option>
+             <option value="">Delhi</option>
+             <option value="">Goa</option>
+             <option value="">Gujrat</option>
+             <option value="">Hariyana</option>
+             <option value="">Punjab</option>
+             <option value="">Tamil Nadu</option>
+             <option value="">Bangal</option>
+             <option value="">Odisha</option>
+             <option value="">Jharkhand</option>
+             <option value="">Talengana</option>
+             <option value="">Tripura</option>
+             <option value="">Ladakh</option>
+             <option value="">Manipur</option>
+             <option value="">Meghalaye</option>
+             <option value="">Mizoram</option>
+             <option value="">Uttrakhand</option>
+             <option value="">Kerala</option>
+             <option value="">Karnataka</option>
+             <option value="">Maharashtra</option>
+             <option value="">Utter Pradesh</option>
+             <option value="">Nagaland</option>
+         </select>
+         <input id="pin" type="number" placeholder="PIN code"><br>
+         </div>
+         <input id="phone" type="number" placeholder="Phone">
+         <input ID="payment" type="submit" value="CONTINUE TO SHIPPING AND PAYMENT">
+    </form>
+    <div>
+        <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/payments-stripe-sub-footer_2.svg?v=1616140901" alt="">
+       
+    </div>
+</div>
+<div id="cartItems">
+
+     <div id="cartmaal"></div>
+    
+   
+    <div id="discount">
+    
+    </div>
+    <div style="display:flex;justify-content:space-between;border:1px solid grey">
+        <input style="height:40px" type="text" placeholder="Gift card">
+        <button id=gift onclick="submit()">APPLY</button>
+    </div>
+
+    
+</div>
+</div>
+</body>
+</html>
+<script>
+
+let parent=document.getElementById("cartmaal")
+
+let Discount=document.getElementById("discount")
+
+
+ document.getElementById("payment").addEventListener("click",BuyProducts)
+
+  function BuyProducts(){
+      alert("Congratulation your order has been successfully placed  ")
+  }
+
+let cartArray = [{
+        "Category": "face",
+        "Name": "Exfoliate Face and Body Scrub Grit, Skin Brightening, De-Tan Removal - 75gm",
+        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Exfoliate-01_1024x1024.jpg?v=1626345623",
+        "Price1": "185",
+        "Price": "165",
+        "Rating": "5",
+        "Review": "1524",
+        "Qty": 1
+    },
+    {
+        "Category": "hair",
+        "Name": "Growth Protein Hair Spa Mask For Hairfall Control, Frizzy Hair Cream, Color Damaged Hair Repair & Growth With Keratin, Biotin, Argan, Onion, Tea Tree & Coffee, 225 g",
+        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/HairMasque-1_1024x1024.jpg?v=1632814654",
+        "Price1": "458",
+        "Price": "308",
+        "Rating": "5",
+        "Review": "398",
+        "Qty": 1
+    }];
+
+     
+
+     let DiscountArray =[
+         {
+             "image" :"https://cdn.shopify.com/s/files/1/0054/6665/2718/products/NicoBalm-01_6c683236-3694-4219-8fee-e969bbf9e94d.jpg?v=1640436778",
+             "price" : 99.00,
+             "description" :"LipBalm Natural Balm For Dry and Chapp..."
+         },
+
+         {
+             "image" :"https://cdn.shopify.com/s/files/1/0054/6665/2718/products/SkinSolve-01_x150.jpg?v=1626506718",
+             "price" :99.00,
+
+             "description" : "SkinSolve Multi Benefit Face Cream & Body ..."
+         },
+
+         {
+             "image" :"https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Glowtion-01_97cd1210-3168-4b56-ad45-b5301955f676.jpg?v=1635231959",
+             "price" :99.00,
+
+             "description" : "Glowtion Face & Body Moisturizing Butter...",
+
+         }
+     ]
+          function appendcartMaal(cartArray){
+          cartArray.forEach((el)=>{
+        
+        var div=document.createElement("div")
+        div.id="maal"
+
+      
+
+        
+
+        var image=document.createElement("img")
+        image.src=el.Img_url
+        image.style.width="40%"
+        
+
+        var price=document.createElement("p")
+        price.innerText=el.Price;
+
+
+           div.append(image,price)
+           parent.append(div)
+
+          })
+          }
+
+          appendcartMaal(cartArray)
+
+
+          function appenddiscount(DiscountArray){
+            
+            DiscountArray.forEach((el)=>{
+
+                let div= document.createElement("div")
+                div.id="div1"
+
+                let div2=document.createElement("div")
+
+
+                let image=document.createElement("img")
+                image.src=el.image;
+                image.style.width="150px"
+
+                let price1=document.createElement("p")
+                price1.innerHTML=" ₹199.00"
+                price1.style.textDecoration="line-through"
+                price1.style.color="lightgrey"
+
+                let price=document.createElement("p")
+                price.innerText="₹"+el.price+".00"
+
+
+                let des=document.createElement("p")
+                des.innerHTML=el.description
+
+                let btn=document.createElement("button")
+                btn.innerHTML="ADD TO CART"
+                btn.style.backgroundColor="green";
+                btn.style.color="white";
+                btn.style.border="none";
+                btn.style.borderRadius="2px"
+                btn.style
+               
+                 
+                 
+                div2.append(image,price1,price,des,btn)
+                div.append(div2)
+
+                Discount.append(div)
+            })
+          }
+    
+          appenddiscount(DiscountArray)
+
+</script>
