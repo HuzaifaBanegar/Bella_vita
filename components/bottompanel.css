@@ -16,12 +16,17 @@ body{
 }
 #huz_availability{
     padding: 5px;
+    overflow-x: hidden;
 }
 #huz_availability, #last_div_ever{
     display: flex;
     justify-content: space-around;
     background-color: rgb(213,224,234);
     font-weight: bold;
+}
+#last_div_ever {
+    width: 100%;
+    overflow-x: hidden;
 }
 #content_bottom{
     display: flex;
