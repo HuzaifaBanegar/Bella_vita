@@ -124,6 +124,8 @@ let face = document.getElementById("ga_face").addEventListener("click", () => {
     
 })
 
+// -----------------------------------------------------------------------Search Function
+
 document.querySelector(".query_icon").addEventListener("click", ()=>{
     let searchvalue= document.querySelector("#query");
     searchvalue.style.display="flex";
@@ -143,8 +145,8 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
                 }
                
             });
-            console.log(searchArray)
-            
+           console.log(searchArray)
+        //    appendData(searchArray,appendTo,cartFun)
          }
      });
 })
