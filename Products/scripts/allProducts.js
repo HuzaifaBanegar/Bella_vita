@@ -123,3 +123,30 @@ let face = document.getElementById("ga_face").addEventListener("click", () => {
     // console.log(new_data)
     
 })
+
+document.querySelector(".query_icon").addEventListener("click", ()=>{
+    let searchvalue= document.querySelector("#query");
+    searchvalue.style.display="flex";
+    searchvalue.addEventListener("keypress", function(event){
+        if(event.key=="Enter")
+        {
+            let searchArray=[];
+            data.map(function(el){
+                var rightSearch=(el.Name.split(" "));
+                for(let i=0; i<rightSearch.length; i++)
+                {
+                    if(searchvalue.value==rightSearch[i])
+                    {
+                        searchArray.push(el);
+                       
+                    }   
+                }
+               
+            });
+            console.log(searchArray)
+            
+         }
+     });
+})
+
+// let searchvalue= document.querySelector("#query");//Input id is "query",with variable "searchvalue"; 

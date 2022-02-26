@@ -32,10 +32,11 @@ const navbar = () => {
             <p>MORE</p>
         </div>
         <div class="navicons">
-            <img src="../../Navbar and bottom panel/images/magnifying-glass-icon-13.png"/>
+            <img src="../../Navbar and bottom panel/images/magnifying-glass-icon-13.png" class="query_icon"/>
             <img src="../../Navbar and bottom panel/images/OIP.jpg">
             <img id="cartIcon2" src="../../Navbar and bottom panel/images/img_290616.png">
         </div>
-    </div>`
+    </div>
+    <input type="text" id="query" placeholder="search">`
 } 
 export default navbar;

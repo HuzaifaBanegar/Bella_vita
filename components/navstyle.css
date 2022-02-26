@@ -63,6 +63,13 @@ body {
     margin-right: 15px;
     cursor: pointer;
 }
+#query{
+    display: none;
+    margin-left: 80%;
+    padding: 5px;
+    border: 1px solid black;
+    width: 20%;
+}
 
 @media only screen and (max-width:1499px) and (min-width:1024px) {
     .huz_content {
