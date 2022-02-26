@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <link rel="stylesheet" href="../components/bottompanel.css">
+    <link rel="stylesheet" href="../components/navstyle.css">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+
     <style>
         #return{
             display: flex;
             justify-content: space-around;
             background-color:rgb(250,250,250);
-
             border: 1px solid hsl(0,0%,90%);
             border-left: none;
             border-right: none;
+            width: 85%;
+            margin: auto;
+        }
+        #return>h4{
+            padding: 10px;
         }
         #baap{
             margin: auto;
@@ -81,11 +89,29 @@
                display: flex;
                grid-template-columns: repeat(3,1fr);
                justify-content: space-between;
-               border: 1px solid red;
+               /* border: 1px solid red; */
+               width: 70%;
+               margin: auto;
         }
         #suggestion{
              height: 40px;
              background-color: rgb(220,53,69);
+         }
+         .ORpartition{
+            width:50px; 
+            height:50px;
+            border-radius:50%;
+            text-align: center;
+            padding: 20px 10px;
+            /* font-size: 20px; */
+            border:1px solid grey;
+            color: grey;
+         }
+         .PartitionTop{
+            background-color:grey;
+            width:1px; 
+            height:170px;
+            margin: auto
          }
 
          @media only screen and (min-width:400px) and (max-width:700px){
@@ -94,9 +120,24 @@
                   grid-template-columns:repeat(1,1fr) ;
               }
          }
+         @media only screen  and (max-width:1024px){
+            #fromstore{
+                  flex-direction: column;
+              }
+              .ORpartition{
+                  display: none;
+              }
+              .PartitionTop{
+                  display: none;
+              }
+              #return>h4:nth-child(2){
+                  display: none;
+              }
+         }
     </style>
 </head>
 <body>
+    <div id="bellavitanav"></div>
   <div id="baap">
 
     <div style="display: flex;gap:5px"><p>Home</p>
@@ -111,18 +152,18 @@
   <div id="fromstore"> <form action="">
         
 
-    <h5>Email Address</h5>
+    <h5 style="margin-top: 20px;">Email Address</h5>
     <input type="email" id="email">
     <h5>Password</h5>
     <input type="password" id="pass"><hr style="border: 0ch;">
     <input id="sub" type="submit" value="LOGIN"  >
 </form>
-<div style="margin:auto" ><div style="background-color:grey;width:1px; height:150px;margin: auto;"></div>
-<div style="width:40px; height:40px;border-radius:50%;text-align: center;padding-top: 20px;border:1px solid grey;color: grey;">OR</div>
-<div style="background-color:grey;width:1px; height:150px;margin: auto;"></div>
+<div style="margin:auto" ><div class="PartitionTop" ></div>
+<div class="ORpartition" >OR</div>
+<div class="PartitionTop" ></div>
 </div>
-  <div style="margin:auto;justify-content:center;">
-      <div style="text-align: center;border:1px solid yellow;;"> <p>Register with us for a faster checkout,<br>
+  <div style="margin:5% auto">
+      <div style="text-align: center;"> <p>Register with us for a faster checkout,<br>
         to track the status of your order and more.</p>
         <input onclick="window.location.href='signup.html'" id="submit" type="submit" value="CREATE AN ACCOUNT"></div>
    
@@ -135,11 +176,25 @@
         <p onclick="">Return to Store</p>
 
     </div>
-<div>
+    </div>
+
+    <div id="huz_bottom_panel"></div>
 </body>
 </html>
 
-<script>
+<script type="module">
+
+import navbar from "../../components/navbar.js"
+
+document.getElementById("bellavitanav").innerHTML=navbar();
+
+import bottomPanel from "../../components/bottompanel.js"
+
+let thelastpanel = document.querySelector("#huz_bottom_panel");
+thelastpanel.innerHTML = bottomPanel();
+
+
+
     document.getElementById("suggestion").style.display="none"
     document.querySelector("form").addEventListener("submit", login)
     var arr=JSON.parse(localStorage.getItem("detail"))
@@ -173,7 +228,7 @@
                         }
         else if(count==1){
             alert("login Successfully")
-            window.location.href="home.html"
+            window.location.href="index.html"
         }
         else{
             alert("Wrong crendential")
@@ -183,4 +238,29 @@
 
         
     }
+
+
+
+    // -----------------------------------------------------------------------Search Function
+
+document.querySelector(".query_icon").addEventListener("click", ()=>{
+    let searchvalue= document.querySelector("#query");
+    searchvalue.style.display="flex";
+    searchvalue.addEventListener("keypress", function(event){
+        if(event.key=="Enter")
+        {
+
+            if(searchvalue.value.length > 0) {
+                localStorage.setItem("bellaSearch", searchvalue.value);
+                window.location.href = ".//Products/search.html"
+            }
+            
+            //console.log(searchvalue.value)
+         }
+     });
+})
+
+
+// let thelastpanel = document.querySelector("#huz_bottom_panel");
+//     thelastpanel.innerHTML = bottomPanel();
 </script>

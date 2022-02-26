@@ -158,3 +158,23 @@ let nav = document.querySelector("#bellavitanav");
 
     let thelastpanel = document.querySelector("#huz_bottom_panel");
     thelastpanel.innerHTML = bottomPanel();
+
+
+    // -----------------------------------------------------------------------Search Function
+
+document.querySelector(".query_icon").addEventListener("click", ()=>{
+    let searchvalue= document.querySelector("#query");
+    searchvalue.style.display="flex";
+    searchvalue.addEventListener("keypress", function(event){
+        if(event.key=="Enter")
+        {
+
+            if(searchvalue.value.length > 0) {
+                localStorage.setItem("bellaSearch", searchvalue.value);
+                window.location.href = "../Products/search.html"
+            }
+            
+            //console.log(searchvalue.value)
+         }
+     });
+})

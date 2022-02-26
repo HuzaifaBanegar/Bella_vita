@@ -1,5 +1,5 @@
+import searchData  from "./searchData.js";
 import { appendData, sortProducts } from "./productScripts.js";
-import {bestsellerList} from "../../components/bestseller.js"
 
 
 let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
@@ -12,6 +12,12 @@ document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 
 //files path
+document.getElementById("bestSeller").addEventListener("click", () => {
+    window.location.href = "./bestseller.html"
+})
+document.getElementById("bestSeller2").addEventListener("click", () => {
+    window.location.href = "./bestseller.html"
+})
 document.getElementById("allProducts").addEventListener("click", () => {
     window.location.href = "./allProducts.html"
 })
@@ -27,8 +33,30 @@ document.getElementById("cartIcon2").addEventListener("click", () => {
 //////
 
 let appendTo = document.getElementById("ga_products");
-let data = bestsellerList();
+let products = searchData();
 
+
+// Search functionality by taking search input from local storage then will iterate through the products data and if the name matches with the search input that item will be pushed to data array and we will show the items present in the data array which will be the search result.
+let searchInput = localStorage.getItem("bellaSearch");
+let data = [];
+
+products.forEach((elem) => {
+    let name = elem.Name.split(" ");
+    
+    for(let i = 0; i < name.length; i++) {
+        if(name[i] == searchInput) {
+            data.push(elem);
+            break;
+        }
+    }
+})
+
+if(data.length === 0) {
+    appendTo.innerHTML = "<h2>Sorry! No results found with your searched text, please try with another text!!!!</h2>";
+}
+
+// console.log(data);
+document.getElementById("ga_searchDirectory").innerText = searchInput;
 
 // adding items to the cart
 const cartFun = (data) => {
@@ -59,7 +87,8 @@ let medium = window.matchMedia("(max-width: 1025px)");
 medium.addListener(mediumMedia);
 
 
-// Filter by product Category
+
+//Filter by Product Category
 let skin = document.getElementById("ga_skin").addEventListener("click", () => {
     var new_data = [];
 
@@ -120,12 +149,12 @@ let face = document.getElementById("ga_face").addEventListener("click", () => {
 
     appendData(new_data,appendTo,cartFun);
     // console.log(new_data)
+    
 })
 
+   // -----------------------------------------------------------------------Search Function
 
-// -----------------------------------------------------------------------Search Function
-
-document.querySelector(".query_icon").addEventListener("click", ()=>{
+   document.querySelector(".query_icon").addEventListener("click", ()=>{
     let searchvalue= document.querySelector("#query");
     searchvalue.style.display="flex";
     searchvalue.addEventListener("keypress", function(event){
@@ -134,7 +163,7 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
 
             if(searchvalue.value.length > 0) {
                 localStorage.setItem("bellaSearch", searchvalue.value);
-                window.location.href = "./search.html"
+                window.location.href = "search.html"
             }
             
             //console.log(searchvalue.value)
