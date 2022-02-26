@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../components/bottompanel.css">
     <link rel="stylesheet" href="../components/navstyle.css">
+   
     <title>Create Account</title>
     <link rel="icon" type="image/x-icon" href="//cdn.shopify.com/s/files/1/0054/6665/2718/files/logo_02_32x32.png?v=1606307450">
+   
 
     <style>
          *{
             font-family:Museo Sans,sans-serif!important ;
         }
         #SandeepBhai{
-            margin: auto;
+            /* margin: auto; */
             width: 80%;
-            margin-top: 50px;
-
-
-
+            margin: 50px auto;
 
         }
         form>h5{
-            margin-bottom: 1%;
+            /* margin-bottom: 2%; */
             font-family: Museo Sans,sans-serif!important;
         }
         input{
@@ -37,6 +37,7 @@
         h4{
             color: grey;
             font-family: Museo Sans,sans-serif!important;
+            margin-bottom: 10px;
         }
         #submit{
             text-align: center;
@@ -108,13 +109,13 @@
         <h4>> Create Account</h4>
         </div>
         <h3>CREATE AN ACCOUNT</h3><hr>
-        <h5 style="color:grey" >Sign up for a free account at Bella Vita Organic.</h5>
+        <h5 style="color:grey; margin: 10px 0px;" >Sign up for a free account at Bella Vita Organic.</h5>
 
              <div id="suggestion">
 
              </div>
         <form action="">
-            <h5 >First Name</h5>
+            <h5>First Name</h5>
             <input id="name" type="text" >
             <h5>Last Name</h5>
             <input id="last" type="text" >
@@ -129,12 +130,18 @@
 
        
     </div>
+    <div id="huz_bottom_panel"></div>
 </body>
 </html>
 <script type="module">
        import navbar from "../../components/navbar.js"
 
-       document.getElementById("sid_navbar").innerHTML=navbar()
+       document.getElementById("sid_navbar").innerHTML=navbar();
+
+       import bottomPanel from "../../components/bottompanel.js"
+
+let thelastpanel = document.querySelector("#huz_bottom_panel");
+    thelastpanel.innerHTML = bottomPanel();
 
    document.getElementById("suggestion").style.display="none"
     document.querySelector("form").addEventListener("submit",SubmitForm)
@@ -221,10 +228,11 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
      });
 })
 
-
 // showing number of items present in the cart on the navbar;
 let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
 
 document.getElementById("ga_cartItems1").innerText = carArrLength.length
 document.getElementById("ga_cartItems2").innerText = carArrLength.length
+
+
 </script>
