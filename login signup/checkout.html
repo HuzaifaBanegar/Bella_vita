@@ -106,7 +106,11 @@
         #div1{
             display: grid;
             grid-template-columns: repeat(3,1fr);
-            border: 1px solid blue;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            margin-right:10px ;
            
         }
         #discount{
@@ -114,7 +118,7 @@
             overflow-x: auto;
             overflow-y: hidden;
             margin: auto;
-            height:358px;
+            height:378px;
             background-color: rgb(243,199,70);
             grid-gap: 25px;
             
@@ -137,6 +141,17 @@
             text-align: center;
             
             border-radius: 10px;
+        }
+        #delete{
+            border: none;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            height: 25px;
+            border-radius: 5px;
+        }
+        #delete:hover{
+            color: red;
         }
         
        
@@ -161,7 +176,7 @@
        
     <div id="formsDAD">
     <form action="">
-        <div style="display:flex ;border: 1px solid red; justify-content: space-between;">
+        <div style="display:flex; justify-content: space-between;">
             <p>CONTACT INFORMATION </p>
             <P>Already have an account?<a href="login.html">LOG IN</a></P>
         </div>
@@ -223,6 +238,7 @@
 <div id="cartItems">
 
      <div id="cartmaal"></div>
+     <div id="cartmaal2"></div>
     
    
     <div id="discount">
@@ -239,8 +255,10 @@
 </body>
 </html>
 <script>
-
+    let discart=JSON.parse(localStorage.getItem("discounted"))||[];
+  let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
 let parent=document.getElementById("cartmaal")
+let parent2=document.getElementById("cartmaal2")
 
 let Discount=document.getElementById("discount")
 
@@ -251,26 +269,7 @@ let Discount=document.getElementById("discount")
       alert("Congratulation your order has been successfully placed  ")
   }
 
-let cartArray = [{
-        "Category": "face",
-        "Name": "Exfoliate Face and Body Scrub Grit, Skin Brightening, De-Tan Removal - 75gm",
-        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/Exfoliate-01_1024x1024.jpg?v=1626345623",
-        "Price1": "185",
-        "Price": "165",
-        "Rating": "5",
-        "Review": "1524",
-        "Qty": 1
-    },
-    {
-        "Category": "hair",
-        "Name": "Growth Protein Hair Spa Mask For Hairfall Control, Frizzy Hair Cream, Color Damaged Hair Repair & Growth With Keratin, Biotin, Argan, Onion, Tea Tree & Coffee, 225 g",
-        "Img_url": "https://cdn.shopify.com/s/files/1/0054/6665/2718/products/HairMasque-1_1024x1024.jpg?v=1632814654",
-        "Price1": "458",
-        "Price": "308",
-        "Rating": "5",
-        "Review": "398",
-        "Qty": 1
-    }];
+
 
      
 
@@ -297,12 +296,22 @@ let cartArray = [{
          }
      ]
           function appendcartMaal(cartArray){
-          cartArray.forEach((el)=>{
+              parent.innerHTML=""
+          cartArray.map((el,index)=>{
         
         var div=document.createElement("div")
         div.id="maal"
 
-      
+         var div2=document.createElement("div")
+            div2.style.display="flex"
+          
+        var div3=document.createElement("div")
+            div3.style.display="flex"
+            div3.style.justifyContent="space-between"
+            div3.style.width="70%"
+            div3.style.margin="auto"
+            
+
 
         
 
@@ -312,16 +321,38 @@ let cartArray = [{
         
 
         var price=document.createElement("p")
-        price.innerText=el.Price;
+        price.innerText="₹"+el.Price;
 
+             var des=document.createElement("p")
+             des.innerHTML=el.Name
 
-           div.append(image,price)
+             var btn=document.createElement("button")
+             btn.innerHTML="Remove"
+             btn.addEventListener("click", ()=>{
+                 RemoveFunction(index)
+             })
+             
+            
+
+             div2.append(image,des)
+             div3.append(price,btn)
+           div.append(div2,div3)
            parent.append(div)
-
+  
           })
           }
-
           appendcartMaal(cartArray)
+
+          function RemoveFunction(index){
+            
+                
+              cartArray.splice(index, 1)
+              localStorage.setItem("BellaVitaCart", JSON.stringify(cartArray))
+
+              appendcartMaal(cartArray)
+          }
+
+         
 
 
           function appenddiscount(DiscountArray){
@@ -356,7 +387,11 @@ let cartArray = [{
                 btn.style.color="white";
                 btn.style.border="none";
                 btn.style.borderRadius="2px"
-                btn.style
+                btn.id="delete"
+                btn.addEventListener("click",function(){
+                    discountcart(el)
+                })
+                
                
                  
                  
@@ -366,7 +401,70 @@ let cartArray = [{
                 Discount.append(div)
             })
           }
+
+           function discountcart(el){
+              DiscountArray.push(el)
+              console.log(el)
+               localStorage.setItem("discounted",JSON.stringify(DiscountArray))
+               alert("successfully added to cart")
+               
+           }
     
           appenddiscount(DiscountArray)
+
+          function appendDiscountmaal(discart){
+           parent2.innerHTML=""
+
+            discart.forEach((el,index1)=>{
+               
+                var div=document.createElement("div")
+        div.id="maal"
+
+         var div2=document.createElement("div")
+            div2.style.display="flex"
+          
+        var div3=document.createElement("div")
+            div3.style.display="flex"
+            div3.style.justifyContent="space-between"
+            div3.style.width="70%"
+            div3.style.margin="auto"
+           
+        var image=document.createElement("img")
+        image.src=el.image
+        image.style.width="40%"
+        
+
+        var price=document.createElement("p")
+        price.innerText="₹"+el.price+".00";
+
+             var des=document.createElement("p")
+             des.innerHTML=el.description
+
+             var btn=document.createElement("button")
+             btn.innerHTML="Remove"
+             btn.id="delete"
+             btn.addEventListener("click", ()=>{
+                 Remove2Function(index1)
+             })
+             
+            
+
+             div2.append(image,des)
+             div3.append(price,btn)
+           div.append(div2,div3)
+           parent2.append(div)
+            })
+           }
+           appendDiscountmaal(discart)
+
+           function Remove2Function(index1){
+            
+                
+            cartArray.splice(index1, 1)
+            localStorage.setItem("discounted", JSON.stringify(DiscountArray))
+            appendDiscountmaal(discart)
+            
+        }
+
 
 </script>
