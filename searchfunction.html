@@ -11,16 +11,15 @@
 </body>
 </html>
 <script type="module">
-//Import All Products Data to append them, here just for reference, i used bestSellerList
+
 import{allProducts} from "./Products/scripts/productsData.js";
-let data=allProducts();//this is For reference, Use All Products while coding
+let data=allProducts();
 
     let searchvalue= document.querySelector("#query");//Input id is "query",with variable "searchvalue"; 
     searchvalue.addEventListener("keypress", function(event){
        if(event.key=="Enter")
        {
            data.map(function(el){
-            //    let prodFound=el.Name;
                var rightSearch=(el.Name.split(" "));
                for(let i=0; i<rightSearch.length; i++)
                {
