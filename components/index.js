@@ -4,12 +4,22 @@ import navbar from "./navbar.js"
     let nav = document.querySelector("#bellavitanav");
     nav.innerHTML = navbar();
 
+
+    //files path and their directory
     document.getElementById("allProducts").addEventListener("click", () => {
         window.location.href= '../Products/allProducts.html';
     })
     document.getElementById("bestSeller").addEventListener("click", () => {
         window.location.href= '../Products/bestseller.html';
     })
+    document.getElementById("cartIcon").addEventListener("click", () => {
+        window.location.href = "./Navbar and bottom panel/cart.html";
+        // console.log("Hello")
+    })
+    document.getElementById("cartIcon2").addEventListener("click", () => {
+        window.location.href = "./Navbar and bottom panel/cart.html";
+    })
+    /////
 
     let thumbnail = document.getElementsByClassName("ga_thumbnail");
     // console.log(thumbnail)

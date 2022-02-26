@@ -11,11 +11,16 @@ const appendData = (data,parent,cartFun) => {
         let img_div = document.createElement("div");
         img_div.className = "ga_img_div"
 
+        let name = document.createElement("h4");
+        name.textContent = elem.Name;
+        name.id = "ga_name";
+
         let cart_button = document.createElement("button")
         cart_button.textContent = "ADD TO CART";
         cart_button.id = "ga_addToCart"
         cart_button.addEventListener("click", () => {
             cartFun(elem);
+            alert(`${elem.Name} Added to the Cart`);
         })
 
 
@@ -34,10 +39,6 @@ const appendData = (data,parent,cartFun) => {
         })
 
         img_div.append(image,cart_button);
-
-        let name = document.createElement("h4");
-        name.textContent = elem.Name;
-        name.id = "ga_name";
         
         let rating = elem.Rating;
 
@@ -90,6 +91,7 @@ const appendData = (data,parent,cartFun) => {
         }
         bottom_button.addEventListener("click", () => {
             cartFun(elem);
+            alert(`${elem.Name} Added to the Cart`);
         })
 
         let medium = window.matchMedia("(max-width: 1025px)");

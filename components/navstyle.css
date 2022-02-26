@@ -36,6 +36,16 @@ body {
     /* border: 1px solid red; */
     padding: 15px 0px;
 }
+.huz_content > p, .navicons > img {
+    transition: .3s;
+}
+.huz_content > p:hover {
+    color: #8ec038;
+}
+.navicons > img:hover {
+    border-bottom: 2px solid #8ec038;
+    padding-bottom: 2px;
+}
 
 .navicons {
     padding: 10px 5px;

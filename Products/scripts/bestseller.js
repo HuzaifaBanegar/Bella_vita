@@ -11,9 +11,17 @@ import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 
+//files path
 document.getElementById("allProducts").addEventListener("click", () => {
     window.location.href = "./allProducts.html"
 })
+document.getElementById("cartIcon").addEventListener("click", () => {
+    window.location.href = "../../Navbar and bottom panel/cart.html";
+})
+document.getElementById("cartIcon2").addEventListener("click", () => {
+    window.location.href = "../../Navbar and bottom panel/cart.html";
+})
+//////
 
 let appendTo = document.getElementById("ga_products");
 let data = bestsellerList();

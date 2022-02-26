@@ -7,6 +7,18 @@ document.getElementById("allProducts").addEventListener("click", () => {
   window.location.href= '../Products/allProducts.html';
 })
 
+//files path
+document.getElementById("bestSeller").addEventListener("click", () => {
+  window.location.href = "./bestseller.html"
+})
+document.getElementById("cartIcon").addEventListener("click", () => {
+  window.location.href = "../../Navbar and bottom panel/cart.html";
+})
+document.getElementById("cartIcon2").addEventListener("click", () => {
+  window.location.href = "../../Navbar and bottom panel/cart.html";
+})
+//////
+
 let data = JSON.parse(localStorage.getItem("BellVita_Product"));
 
 document.querySelector("title").innerText = data.Name;
@@ -132,9 +144,9 @@ description.addEventListener("click", () => {
     showInfo.innerHTML = `
     <h5 id="ga_infoTitle">DESCRIPTION</h5>
     
-    <p>The Bella Vita Organic C-Glow Face Pack is a blend of natural & Ayurvedic ingredients that brightens, nourishes & hydrates your skin and gives your face a natural glow from within. Power packed with the goodness of Vitamin C, Orange Peel, Turmeric & Saffron, this face pack addresses multiple concerns all at once. Vitamin C & Orange peel are rich in antioxidants that contain bleaching agents and improve the skin tone by reducing dark spots and pigmentation. Kaolin Clay is a natural exfoliator and deep cleans your pores and absorbs excess oil from your skin. The Butter Blend of Mango, Shea & Cocoa nourish & hydrate your skin from deep within and leave it feeling suppler and brighter.</p>
+    <p id="p">The Bella Vita Organic C-Glow Face Pack is a blend of natural & Ayurvedic ingredients that brightens, nourishes & hydrates your skin and gives your face a natural glow from within. Power packed with the goodness of Vitamin C, Orange Peel, Turmeric & Saffron, this face pack addresses multiple concerns all at once. Vitamin C & Orange peel are rich in antioxidants that contain bleaching agents and improve the skin tone by reducing dark spots and pigmentation. Kaolin Clay is a natural exfoliator and deep cleans your pores and absorbs excess oil from your skin. The Butter Blend of Mango, Shea & Cocoa nourish & hydrate your skin from deep within and leave it feeling suppler and brighter.</p>
     
-    <p>Formulated with the goodness of pink clay, walnut, rose essential oil, aloe vera, and more, Glowey is perfect for that bright, clean and glowing skin. The carefully sourced natural and ayurvedic ingredients soothe the skin, gently exfoliate it, balance its pH level, reduce early signs of aging, smoothen it, revive and rejuvenate it over time. It is the best cleanser for the face as walnut grits gently scrub the skin while pink clay mildly exfoliates, improving the skin's complexion, giving you glowing, bright, and smooth skin. Being a mild exfoliate, Glowey is a well-suited face scrub for dry skin and gently removes all the dead skin cells from the skin. As a mask, it also works as a great face pack for women when you don't want to sit for long hours at a salon. Just a simple application of this on your face & neck for 10-15 minutes will give you a salon-like glow at home. </p>
+    <p id="p">Formulated with the goodness of pink clay, walnut, rose essential oil, aloe vera, and more, Glowey is perfect for that bright, clean and glowing skin. The carefully sourced natural and ayurvedic ingredients soothe the skin, gently exfoliate it, balance its pH level, reduce early signs of aging, smoothen it, revive and rejuvenate it over time. It is the best cleanser for the face as walnut grits gently scrub the skin while pink clay mildly exfoliates, improving the skin's complexion, giving you glowing, bright, and smooth skin. Being a mild exfoliate, Glowey is a well-suited face scrub for dry skin and gently removes all the dead skin cells from the skin. As a mask, it also works as a great face pack for women when you don't want to sit for long hours at a salon. Just a simple application of this on your face & neck for 10-15 minutes will give you a salon-like glow at home. </p>
     `
 })
 
@@ -149,11 +161,11 @@ ingredients.addEventListener("click", () => {
     showInfo.innerHTML = `
     <h5>INGREDIENTS</h5>
     
-    <p>Walnut: Tiny grits of walnut shells exfoliate the skin gently. Walnut brightens skin & provides a subtle shine. Smoothens the skin's texture & reduces wrinkles.</p>
-    <p>Pink Clay: Rich in minerals, pink clay helps restore moisture in the skin, remove impurities, and lightly exfoliates the complexion.</p>
-    <p>Rose Extract: Reduces redness, inflammation, acne & scars. Provides a subtle glow & adds moisture & hydrates skin</p>
+    <p id="p">Walnut: Tiny grits of walnut shells exfoliate the skin gently. Walnut brightens skin & provides a subtle shine. Smoothens the skin's texture & reduces wrinkles.</p>
+    <p id="p">Pink Clay: Rich in minerals, pink clay helps restore moisture in the skin, remove impurities, and lightly exfoliates the complexion.</p>
+    <p id="p">Rose Extract: Reduces redness, inflammation, acne & scars. Provides a subtle glow & adds moisture & hydrates skin</p>
     <p>Cocoa Butter: Fatty acids in cocoa butter moisturize skin deeply. It improves the skin's elasticity & makes it tighter and younger-looking.    </p>
-    <p>Full Ingredients : Aqua, aloe vera leaf juice, cold pressed sunflower oil, cold pressed almond oil, cold pressed coconut oil, shea butter, cocoa butter, mango butter, pink clay, bentonite, walnut shell grit, rose essential oil, allantoin, xanthan gum, glycerol monostearate, caprylic triglyceride, decyl glucoside, sodium benzoate, potassium sorbate.
+    <p id="p">Full Ingredients : Aqua, aloe vera leaf juice, cold pressed sunflower oil, cold pressed almond oil, cold pressed coconut oil, shea butter, cocoa butter, mango butter, pink clay, bentonite, walnut shell grit, rose essential oil, allantoin, xanthan gum, glycerol monostearate, caprylic triglyceride, decyl glucoside, sodium benzoate, potassium sorbate.
 
     </p>
     `
@@ -170,14 +182,14 @@ benefits.addEventListener("click", () => {
     showInfo.innerHTML = `
     <h5>BENEFITS</h5>
     
-    <p>Brightens, nourishes & hydrates skin.</p>
-    <p>Made with natural ingredients</p>
-    <p>Power packed with Vitamin C, Orange Peel, Saffron & Turmeric.</p>
-    <p>Improves overall skin tone by reducing dark spots & pigmentation.</p>
-    <p>Rich in antioxidants.</p>
-    <p>Contains Kaolin Clay which is a natural exfoliator and absorbs excess oil & impurities.
+    <p id="p">Brightens, nourishes & hydrates skin.</p>
+    <p id="p">Made with natural ingredients</p>
+    <p id="p">Power packed with Vitamin C, Orange Peel, Saffron & Turmeric.</p>
+    <p id="p">Improves overall skin tone by reducing dark spots & pigmentation.</p>
+    <p id="p">Rich in antioxidants.</p>
+    <p id="p">Contains Kaolin Clay which is a natural exfoliator and absorbs excess oil & impurities.
     </p>
-    <p>Butter blend of Mango, Shea & Cocoa deeply nourish & hydrate skin.</p>
+    <p id="p">Butter blend of Mango, Shea & Cocoa deeply nourish & hydrate skin.</p>
     `
 })
 
@@ -192,15 +204,15 @@ howToUse.addEventListener("click", () => {
     showInfo.innerHTML = `
     <h5>HOW TO USE</h5>
 
-    <p><span style="font-weight:bold">Step 1:</span> On freshly cleansed skin, evenly apply a generous layer of the C-Glow Face Pack.</p>
+    <p id="p"><span style="font-weight:bold">Step 1:</span> On freshly cleansed skin, evenly apply a generous layer of the C-Glow Face Pack.</p>
 
-    <p><span style="font-weight:bold">Step 2:</span> Make sure to cover your face and neck, avoiding the eyes.</p>
+    <p id="p"><span style="font-weight:bold">Step 2:</span> Make sure to cover your face and neck, avoiding the eyes.</p>
 
-    <p><span style="font-weight:bold">Step 3:</span> Let it dry for 10-15 minutes, rinse with lukewarm water.</p>
+    <p id="p"><span style="font-weight:bold">Step 3:</span> Let it dry for 10-15 minutes, rinse with lukewarm water.</p>
 
-    <p><span style="font-weight:bold">Step 4:</span> Pat dry and finish with C-Glow Face Serum and C-Glow Face Cream..</p>
+    <p id="p"><span style="font-weight:bold">Step 4:</span> Pat dry and finish with C-Glow Face Serum and C-Glow Face Cream..</p>
 
-    <p><span style="font-weight:bold">Step 5:</span> For best results, use 4-5 times a week</p>
+    <p id="p"><span style="font-weight:bold">Step 5:</span> For best results, use 4-5 times a week</p>
     `
 })
 
@@ -364,6 +376,7 @@ let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
 
 document.getElementById("ga_addCart").addEventListener("click", () => {
   cartFun(data);
+  alert(`${data.Name} Added to the Cart > Quantity: ${data.Qty}`);
 })
 
 const cartFun = (data) => {
