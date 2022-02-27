@@ -102,8 +102,7 @@
             }
         }
         #maal{
-            border: 1px solid red;
-            /* text-align: center; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;            /* text-align: center; */
         }
         #div1{
             display: grid;
@@ -239,8 +238,9 @@
          <input id="pin" type="number" placeholder="PIN code"><br>
          </div>
          <input id="phone" type="number" placeholder="Phone">
-         <input ID="payment" type="submit" value="CONTINUE TO PAYMENT">
+         <!-- <input id="payment" type="submit" value="CONTINUE TO PAYMENT"> -->
     </form>
+        <button id="payment">CONTINUE TO PAYMENT</button>
     <div>
         <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/payments-stripe-sub-footer_2.svg?v=1616140901" alt="">
        
@@ -292,10 +292,6 @@ let parent2=document.getElementById("cartmaal2")
 let Discount=document.getElementById("discount")
 
 
- document.getElementById("payment").addEventListener("click",BuyProducts)
-
-
-
 //  promo code function 
 
    var promo=document.getElementById("mytext")
@@ -338,10 +334,6 @@ let Discount=document.getElementById("discount")
  document.getElementById("tax").innerText=`including ₹82.73 in taxes`
  document.getElementById("total-price").textContent=` ₹${subtotal}`
   document.getElementById("total-price2").textContent=` ₹${subtotal}`
-
-  function BuyProducts(){
-      alert("Congratulation your order has been successfully placed  ")
-  }
 
 
 
@@ -563,9 +555,9 @@ let Discount=document.getElementById("discount")
         document.getElementById("payment").addEventListener("click",()=>{
                   
 
-            localStorage.setItem("bellatotal",subtotal)
-     
-            window.location.href="payments.html"
+            localStorage.setItem("bellatotal",subtotal);
+            window.location.href = "../Navbar and bottom panel/payments.html"
+            
         })
 
 

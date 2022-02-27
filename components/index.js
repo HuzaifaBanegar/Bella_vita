@@ -19,6 +19,15 @@ import navbar from "./navbar.js"
     document.getElementById("cartIcon2").addEventListener("click", () => {
         window.location.href = "./Navbar and bottom panel/cart.html";
     })
+    document.getElementById("go_to_signup").addEventListener("click", () => {
+        window.location.href = "./login signup/signup.html"
+    })
+    document.getElementById("user1").addEventListener("click", () => {
+        window.location.href = "./login signup/login.html"
+    })
+    document.getElementById("user2").addEventListener("click", () => {
+        window.location.href = "./login signup/login.html"
+    })
     /////
 
     let thumbnail = document.getElementsByClassName("ga_thumbnail");
@@ -64,18 +73,33 @@ import navbar from "./navbar.js"
 
     let parent1 = document.querySelector("#best_seller_slider");
     import { appendData } from "../Navbar and bottom panel/scripts/sliderData.js";
-    appendData(result, parent1);
+
+    let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
+
+    const cartFun = (data) => {
+        cartArr.push(data);
+        localStorage.setItem("BellaVitaCart", JSON.stringify(cartArr));
+    
+    
+        // showing number of items present in the cart on the navbar;
+    let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
+    
+    document.getElementById("ga_cartItems1").innerText = carArrLength.length
+    document.getElementById("ga_cartItems2").innerText = carArrLength.length
+    }
+
+    appendData(result, parent1,cartFun);
     // ---------------------------------------------------------------------------------
     var result2= newArrivalList();
     let parent2= document.querySelector("#new_arrival_slider");
     console.log(result2);
-    appendData(result2, parent2);
+    appendData(result2, parent2,cartFun);
 
     // ------------------------------------------------------------------------------------
 
     var result3= comboList();
     let parent3= document.querySelector("#combolist_slider");
-    appendData(result3, parent3)
+    appendData(result3, parent3,cartFun)
 
     //------------------------------------------------------------------------------
 
@@ -112,3 +136,4 @@ let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
 
 document.getElementById("ga_cartItems1").innerText = carArrLength.length
 document.getElementById("ga_cartItems2").innerText = carArrLength.length
+

@@ -1,4 +1,4 @@
-const appendData = (data,parent) => {
+const appendData = (data,parent,cartFun) => {
     data.forEach((elem) => {
         let image = document.createElement("img");
         image.src = elem.Img_url;
@@ -7,9 +7,17 @@ const appendData = (data,parent) => {
         let img_div = document.createElement("div");
         img_div.className = "ga_img_div"
 
+        let name = document.createElement("h4");
+        name.textContent = elem.Name;
+        name.id = "ga_name";
+
         let cart_button = document.createElement("button")
         cart_button.textContent = "ADD TO CART";
         cart_button.id = "ga_addToCart"
+        cart_button.addEventListener("click", () => {
+            cartFun(elem);
+            alert(`Added > ${elem.Name} < to the Cart`);
+        })
 
         img_div.addEventListener("mouseover", () => {
             image.src = elem.Img_url;
@@ -26,10 +34,6 @@ const appendData = (data,parent) => {
         })
 
         img_div.append(image,cart_button);
-
-        let name = document.createElement("h4");
-        name.textContent = elem.Name;
-        name.id = "ga_name";
         
         let rating = elem.Rating;
 
@@ -71,6 +75,11 @@ const appendData = (data,parent) => {
         let bottom_button = document.createElement("button");
         bottom_button.textContent = "ADD TO CART";
 
+        bottom_button.addEventListener("click", () => {
+            cartFun(elem);
+            alert(`Added > ${elem.Name} < to the Cart`);
+        })
+
         const displayButton = (x) => {
             if(x.matches) {
                 bottom_button.style.display = "block"
@@ -86,9 +95,9 @@ const appendData = (data,parent) => {
 
         div.append(img_div,div2,bottom_button);
 
-        div.addEventListener("click", () => {
+        div2.addEventListener("click", () => {
             localStorage.setItem("BellVita_Product", JSON.stringify(elem));
-            window.location.href = "productDetail.html";
+            window.location.href = "./Products/productDetail.html";
         })
 
         parent.append(div);

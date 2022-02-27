@@ -20,7 +20,7 @@ const appendData = (data,parent,cartFun) => {
         cart_button.id = "ga_addToCart"
         cart_button.addEventListener("click", () => {
             cartFun(elem);
-            alert(`${elem.Name} Added to the Cart`);
+            alert(`Added > ${elem.Name} < to the Cart`);
         })
 
 
@@ -91,7 +91,7 @@ const appendData = (data,parent,cartFun) => {
         }
         bottom_button.addEventListener("click", () => {
             cartFun(elem);
-            alert(`${elem.Name} Added to the Cart`);
+            alert(`Added > ${elem.Name} < to the Cart`);
         })
 
         let medium = window.matchMedia("(max-width: 1025px)");

@@ -24,6 +24,12 @@ document.getElementById("cartIcon").addEventListener("click", () => {
 document.getElementById("cartIcon2").addEventListener("click", () => {
     window.location.href = "../../Navbar and bottom panel/cart.html";
 })
+document.getElementById("user1").addEventListener("click", () => {
+    window.location.href = "../../login signup/login.html"
+})
+document.getElementById("user2").addEventListener("click", () => {
+    window.location.href = "../../login signup/login.html"
+})
 //////
 
 let appendTo = document.getElementById("ga_products");

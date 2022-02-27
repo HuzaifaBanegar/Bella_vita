@@ -10,7 +10,7 @@ const navbar = () => {
         </div>
         <div><img src="../../Navbar and bottom panel/images/Screenshot (109).png" style="cursor:pointer" onclick="window.location.href='../../index.html'"></div>
         <div class="navmoblast">
-            <img src="../../Navbar and bottom panel/images/OIP.jpg">
+            <img id="user1" src="../../Navbar and bottom panel/images/OIP.jpg">
             <div id="cartIcon" class="cartCount"><div id="ga_cartItems1"></div><img  src="../../Navbar and bottom panel/images/img_290616.png"></div>
         </div>
     </div>
@@ -33,7 +33,7 @@ const navbar = () => {
         </div>
         <div class="navicons">
             <img src="../../Navbar and bottom panel/images/magnifying-glass-icon-13.png" class="query_icon"/>
-            <img src="../../Navbar and bottom panel/images/OIP.jpg">
+            <img id="user2" src="../../Navbar and bottom panel/images/OIP.jpg">
             <div id="cartIcon2" class="cartCount"><div id="ga_cartItems2"></div><img src="../../Navbar and bottom panel/images/img_290616.png"></div>
         </div>
         </div>

@@ -10,6 +10,17 @@ let nav = document.querySelector("#bellavitanav");
     document.getElementById("bestSeller").addEventListener("click", () => {
         window.location.href= '../Products/bestseller.html';
     })
+    document.getElementById("go_to_checkout").addEventListener("click", () => {
+        window.location.href = "../login signup/checkout.html"
+    })
+    document.getElementById("user1").addEventListener("click", () => {
+        window.location.href = "../login signup/login.html"
+    })
+    document.getElementById("user2").addEventListener("click", () => {
+        window.location.href = "../login signup/login.html"
+    })
+
+
     // ----------------------------------------------------------------------------Cart calculations
     let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
     console.log(cartArray);
@@ -115,15 +126,13 @@ let nav = document.querySelector("#bellavitanav");
          console.log(+(subtotal))
     document.querySelector("#cartValue").textContent=`Rs.${subtotal}`
 
+        // showing number of items present in the cart on the navbar;
+        let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
 
+        document.getElementById("ga_cartItems1").innerText = carArrLength.length
+        document.getElementById("ga_cartItems2").innerText = carArrLength.length;
 
-    // showing number of items present in the cart on the navbar;
-    let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
-
-    document.getElementById("ga_cartItems1").innerText = carArrLength.length
-    document.getElementById("ga_cartItems2").innerText = carArrLength.length
-
-    }
+        }
 
     function addFunction(el){
         el.Qty++;
@@ -157,13 +166,27 @@ let nav = document.querySelector("#bellavitanav");
         }
     }
 
+
+
+
     import {bestsellerList} from "../../components/bestseller.js";
     var result = bestsellerList();
     // console.log(result)
 
     let parent1 = document.querySelector("#best_seller_slider");
     import { appendData } from "./sliderData.js";
-    appendData(result, parent1);
+
+
+    // let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
+
+    const cartFun = (data) => {
+        cartArray.push(data);
+        localStorage.setItem("BellaVitaCart", JSON.stringify(cartArray));
+
+        location.reload();
+    }
+
+    appendData(result, parent1,cartFun);
 
     let thelastpanel = document.querySelector("#huz_bottom_panel");
     thelastpanel.innerHTML = bottomPanel();
@@ -193,4 +216,4 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
 let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));
 
 document.getElementById("ga_cartItems1").innerText = carArrLength.length
-document.getElementById("ga_cartItems2").innerText = carArrLength.length
+document.getElementById("ga_cartItems2").innerText = carArrLength.length;
