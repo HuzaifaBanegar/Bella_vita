@@ -704,3 +704,6 @@ const bestsellerList=()=>{
               }]
       }
       export {bestsellerList,newArrivalList, comboList};
+
+
+      
