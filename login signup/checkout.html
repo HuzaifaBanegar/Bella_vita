@@ -155,6 +155,15 @@
         #delete:hover{
             color: red;
         }
+        #gift{
+            border: 1px solid lightgreen;
+            width: 70px;
+            background-color: white;
+            color: greenyellow;
+        }
+        #mytext:focus{
+                outline: none;
+        }
         
        
 
@@ -230,7 +239,7 @@
          <input id="pin" type="number" placeholder="PIN code"><br>
          </div>
          <input id="phone" type="number" placeholder="Phone">
-         <input ID="payment" type="submit" value="CONTINUE TO SHIPPING AND PAYMENT">
+         <input ID="payment" type="submit" value="CONTINUE TO PAYMENT">
     </form>
     <div>
         <img src="https://cdn.shopify.com/s/files/1/0054/6665/2718/files/payments-stripe-sub-footer_2.svg?v=1616140901" alt="">
@@ -247,8 +256,26 @@
     
     </div>
     <div style="display:flex;justify-content:space-between;border:1px solid grey">
-        <input style="height:40px" type="text" placeholder="Gift card">
-        <button id=gift onclick="submit()">APPLY</button>
+        <input id="mytext" style="height:40px;border: none;" type="text" placeholder="Gift card or Discount Code">
+        <button id="gift" onclick="submit()">APPLY</button>
+    </div>
+
+    <div>
+        <div style="display:flex; justify-content:space-between">
+            <div><p>Subtotal</p>
+            <p>Shipping </p></div>
+            <div style="text-align:right">
+                
+            <p id="total-price2" ></p>
+            <p>Calulate at the next step</p>
+            </div>
+            
+        </div>
+        <p id="total">total price</p>
+        <div style="display:flex;justify-content:space-between;">
+            <p style="font-size:15px" id="tax"></p>
+            <p id="total-price"></p>
+        </div>
     </div>
 
     
@@ -266,6 +293,51 @@ let Discount=document.getElementById("discount")
 
 
  document.getElementById("payment").addEventListener("click",BuyProducts)
+
+
+
+//  promo code function 
+
+   var promo=document.getElementById("mytext")
+       var count=0
+     function submit(){
+         
+         if(promo.value==="BELLAVITA007" || promo.value==="SANDEEP007" || promo.value==="GAURAV007" ||promo.value==="HUZAIFA007"){
+
+            var discount=Math.floor(subtotal/2.2);
+            subtotal=subtotal-discount;
+            count++
+           
+            if(count==1){
+                document.getElementById("total-price").textContent=` ₹${subtotal}`
+  document.getElementById("total-price2").textContent=` ₹${subtotal}`
+        }
+        else{
+            alert("Promo Already Applied")
+        }
+           
+           
+     }
+     
+     else{
+         alert("invalid Promo")
+     }
+
+     }
+
+
+    // total calculator
+ let nos=cartArray.length;
+ var subtotal =cartArray.reduce(function (ac,el){
+     return ac+Number(el.Price*el.Qty);
+ },0)
+
+ console.log(+(subtotal))
+
+ document.getElementById("total").textContent=`TOTAL `
+ document.getElementById("tax").innerText=`including ₹82.73 in taxes`
+ document.getElementById("total-price").textContent=` ₹${subtotal}`
+  document.getElementById("total-price2").textContent=` ₹${subtotal}`
 
   function BuyProducts(){
       alert("Congratulation your order has been successfully placed  ")
@@ -296,7 +368,11 @@ let Discount=document.getElementById("discount")
              "description" : "Glowtion Face & Body Moisturizing Butter...",
 
          }
-     ]
+     ]  
+
+
+            //   cart item from huzaifa's cart
+
           function appendcartMaal(cartArray){
               parent.innerHTML=""
           cartArray.map((el,index)=>{
@@ -322,14 +398,16 @@ let Discount=document.getElementById("discount")
         image.style.width="40%"
         
 
-        var price=document.createElement("p")
+        var price=document.createElement("h4")
         price.innerText="₹"+el.Price;
 
              var des=document.createElement("p")
              des.innerHTML=el.Name
+             des.style.fontSize="13px"
 
              var btn=document.createElement("button")
              btn.innerHTML="Remove"
+             btn.id="delete"
              btn.addEventListener("click", ()=>{
                  RemoveFunction(index)
              })
@@ -352,10 +430,22 @@ let Discount=document.getElementById("discount")
               localStorage.setItem("BellaVitaCart", JSON.stringify(cartArray))
 
               appendcartMaal(cartArray)
+              var subtotal =cartArray.reduce(function (ac,el){
+     return ac+Number(el.Price*el.Qty);
+ },0)
+
+ console.log(+(subtotal))
+
+ document.getElementById("total").textContent=`TOTAL `
+ document.getElementById("tax").innerText=`including ₹82.73 in taxes`
+ document.getElementById("total-price").textContent=` ₹${subtotal}`
+ document.getElementById("total-price2").textContent=` ₹${subtotal}`
+
           }
 
          
-
+  
+            //    item from Discount box placed in checkoutpage
 
           function appenddiscount(DiscountArray){
             
@@ -414,10 +504,10 @@ let Discount=document.getElementById("discount")
     
           appenddiscount(DiscountArray)
 
-          function appendDiscountmaal(discart){
+          function appendDiscountmaal(discart,parent2){
            parent2.innerHTML=""
 
-            discart.forEach((el,index1)=>{
+            discart.map((el,index)=>{
                
                 var div=document.createElement("div")
         div.id="maal"
@@ -446,7 +536,7 @@ let Discount=document.getElementById("discount")
              btn.innerHTML="Remove"
              btn.id="delete"
              btn.addEventListener("click", ()=>{
-                 Remove2Function(index1)
+                 Remove2Function(index)
              })
              
             
@@ -457,16 +547,25 @@ let Discount=document.getElementById("discount")
            parent2.append(div)
             })
            }
-           appendDiscountmaal(discart)
+           appendDiscountmaal(discart,parent2)
 
-           function Remove2Function(index1){
+           function Remove2Function(index){
             
                 
-            cartArray.splice(index1, 1)
+            DiscountArray.splice(index, 1)
             localStorage.setItem("discounted", JSON.stringify(DiscountArray))
-            appendDiscountmaal(discart)
+            appendDiscountmaal(discart,parent2)
             
         }
 
+
+
+        document.getElementById("payment").addEventListener("click",()=>{
+                  
+
+            localStorage.setItem("bellatotal",subtotal)
+     
+            window.location.href="payments.html"
+        })
 
 </script>
