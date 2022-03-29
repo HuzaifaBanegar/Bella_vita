@@ -33,7 +33,9 @@ document.getElementById("user2").addEventListener("click", () => {
 //////
 
 let appendTo = document.getElementById("ga_products");
-let data = bestsellerList();
+
+//getting data from backend
+let data = await bestsellerList();
 
 
 // adding items to the cart

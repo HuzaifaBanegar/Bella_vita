@@ -68,7 +68,7 @@ import navbar from "./navbar.js"
 
     // --------------------------------------------------------------------------------------BEST SELLER
     import {bestsellerList,newArrivalList, comboList} from "./bestseller.js";
-    var result = bestsellerList();
+    var result = await bestsellerList();
     // console.log(result)
 
     let parent1 = document.querySelector("#best_seller_slider");
