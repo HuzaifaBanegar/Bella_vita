@@ -195,49 +195,38 @@ thelastpanel.innerHTML = bottomPanel();
 
 
 
-    document.getElementById("suggestion").style.display="none"
-    document.querySelector("form").addEventListener("submit", login)
-    var arr=JSON.parse(localStorage.getItem("detail"))
-      console.log(arr)
-    function login(event){
+document.querySelector("form").addEventListener("submit", login)
+    
+    async function login(event){
         event.preventDefault()
-        document.getElementById("suggestion").style.display="block"
-        document.getElementById("suggestion").innerHTML=""
-        var email=document.getElementById("email").value
-        var password=document.getElementById("pass").value
-         
-         var count=0
-        for(var i=0; i<arr.length; i++){
-                    if(arr[i].email==email && arr[i].pass==password){
-                       count++
-                       break;
-                    }
-        }
-        if(email.length==0 && password.length==0){
-                            let div= document.createElement("div");
-
-                            let p=document.createElement("p")
-                            p.innerHTML="Empty email or password."
-                            p.style.textAlign="left";
-                            p.style.color="white"
-                            p.style.fontSize="large"
-                            p.style.margin="1px"
-
-                            div.append(p)
-                            document.getElementById("suggestion").append(div)
-                        }
-        else if(count==1){
-            alert("login Successfully")
-            window.location.href="../index.html"
-        }
-        else{
-            alert("Wrong crendential")
-        }
-
-
-
-        
+            try {
+            let login_data={
+                email: document.getElementById("email").value,
+                password: document.getElementById("pass").value
+            }
+            let login_data_json = JSON.stringify(login_data);
+    
+            let res= await fetch("http://localhost:5000/login", {
+                method:"POST",
+                body:login_data_json,
+    
+                headers:{
+                    "Content-Type":"application/json",
+                },
+            });
+            let data= await res.json();
+            if(data.token)
+            {
+                localStorage.setItem("loginToken", data.token);
+                window.location.href="./index.html"
+            }
+            // getUser(login_data.username, data.token);
+            
+            } catch (error) {
+                alert("Wrong Credentials")
+            }
     }
+
 
 
 
@@ -259,7 +248,6 @@ document.querySelector(".query_icon").addEventListener("click", ()=>{
          }
      });
 })
-
 
 // showing number of items present in the cart on the navbar;
 let carArrLength = JSON.parse(localStorage.getItem("BellaVitaCart"));

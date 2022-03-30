@@ -84,8 +84,8 @@
             }
          }
          #suggestion{
-             height: 80px;
-             background-color: rgb(220,53,69);
+             height: 10px;
+             /* background-color: rgb(220,53,69); */
              
          }
         
@@ -143,65 +143,42 @@
 let thelastpanel = document.querySelector("#huz_bottom_panel");
     thelastpanel.innerHTML = bottomPanel();
 
-   document.getElementById("suggestion").style.display="none"
-    document.querySelector("form").addEventListener("submit",SubmitForm)
-    var arr=JSON.parse(localStorage.getItem("detail"))||[]
-    console.log(arr)
-function SubmitForm(event){
-    event.preventDefault()
-    var name=document.querySelector("#name").value
+    document.querySelector("form").addEventListener("submit", Register)
+    async function Register(event) 
+    {
+        event.preventDefault()
     
-    var last =document.querySelector("#last").value
-    var email=document.querySelector("#email").value
-    var password=document.querySelector("#password").value
-     
-    
-    function obj(){
-            this.name=name;
-            this.last=last;
-            this.email=email;
-            this.pass=password;
-        }
-     if(last.length==0 || name.length==0 || email.length==0 || password.length==0){
-           document.getElementById("suggestion").style.display="block"
-            let div=document.createElement("div")
-            div.style.margin="25px"
-            div.style.width="90%"
-            div.style.paddingTop="0.5px"
-            
-            
+            try {
+                let register_data =
+                {
+                   firstName: document.querySelector("#name").value,
+                    lastName: document.querySelector("#last").value,
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value
+                }
+                // console.log(firstName)
+                register_data = JSON.stringify(register_data);
+                let res = await fetch("http://localhost:5000/register", {
+                    method: "POST",
+                    body: register_data,
 
-            let p=document.createElement("p")
-            p.innerText="The password field can't be blank"
-            p.style.color="white"
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                let data = await res.json();
+                // console.log(data)
+                if (data.token) {
+                    alert("sucessfully signup")
+                    window.location.href = "login.html"
+                }
 
-            let p2=document.createElement("p")
-            p2.innerText="The email field can't be blank";
-            p2.style.color="white"
+            } catch (error) {
+                console.log({error:error.message})
+            }
+        
+    }
 
-            div.append(p,p2)
-
-            document.getElementById("suggestion").append(div)
-     }
-     else if(last.length!=0 && name.length!=0 && email.length!=0 &&password.length!=0){
-       
-        var object =new obj();
-      arr.push(object)
-      localStorage.setItem("detail",JSON.stringify(arr))
-       
-      
-      
-      alert("sucessfully signup")
-      window.location.href="login.html"
-     }
-
-    
-   
-  
-
-     
-     
-}
 import images from "./imageshai/images.js"
 
 var photos=document.getElementById("images")
