@@ -10,13 +10,37 @@ let nav = document.querySelector("#bellavitanav");
     document.getElementById("bestSeller").addEventListener("click", () => {
         window.location.href= '../Products/bestseller.html';
     })
+
+let token = localStorage.getItem("loginToken");
+let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
+
+    
+
+if(!token) {
+    document.getElementById("go_to_checkout").textContent = "LOGIN TO CHECKOUT";
+
     document.getElementById("go_to_checkout").addEventListener("click", () => {
-        window.location.href = "../login signup/checkout.html"
+        window.location.href = "../login signup/login.html"
     })
+}
+else {
+    document.getElementById("go_to_checkout").addEventListener("click", () => {
+
+        if(cartArray.length == 0) {
+            alert("It looks like your cart is Empty. To proceed please add items to the cart.") 
+        }
+        else {
+            window.location.href = "../login signup/checkout.html";
+        }
+    });
+
+    document.getElementById("go_to_checkout").textContent = "PROCEED TO CHECKOUT";
+
+}
     
 
 
-    let token = localStorage.getItem("loginToken");
+    
 if(!token) {
     document.getElementById("user1").addEventListener("click", () => {
         window.location.href = "./login signup/login.html"
@@ -57,7 +81,6 @@ document.getElementById("ga_title").innerText = userName;
 
 
     // ----------------------------------------------------------------------------Cart calculations
-    let cartArray=JSON.parse(localStorage.getItem("BellaVitaCart"))||[];
     console.log(cartArray);
 
     let nos= cartArray.length;
