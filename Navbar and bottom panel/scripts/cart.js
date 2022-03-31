@@ -13,12 +13,47 @@ let nav = document.querySelector("#bellavitanav");
     document.getElementById("go_to_checkout").addEventListener("click", () => {
         window.location.href = "../login signup/checkout.html"
     })
+    
+
+
+    let token = localStorage.getItem("loginToken");
+if(!token) {
     document.getElementById("user1").addEventListener("click", () => {
-        window.location.href = "../login signup/login.html"
+        window.location.href = "./login signup/login.html"
     })
     document.getElementById("user2").addEventListener("click", () => {
-        window.location.href = "../login signup/login.html"
+        window.location.href = "./login signup/login.html"
     })
+}
+else {
+    let logout = document.getElementById("logout_btn");
+    logout.addEventListener("click", () => {
+        localStorage.removeItem("loginToken");
+        location.reload();
+    });
+
+    document.getElementById("user2").addEventListener("mouseover", () => {
+        document.getElementById("logout").style.display = "flex";
+    })
+
+    document.getElementById("logout").addEventListener("mouseover", () => {
+        document.getElementById("logout").style.display = "flex";
+    })
+
+    document.getElementById("user2").addEventListener("mouseout", () => {
+        document.getElementById("logout").style.display = "none";
+    })
+
+    document.getElementById("logout").addEventListener("mouseout", () => {
+        document.getElementById("logout").style.display = "none";
+    });
+}
+
+let user = JSON.parse(localStorage.getItem("userName"));
+
+let userName = user.firstName + " " + user.lastName;
+
+document.getElementById("ga_title").innerText = userName;
 
 
     // ----------------------------------------------------------------------------Cart calculations

@@ -24,6 +24,7 @@ body {
     padding: 10px 10px 0px;
     border: 0.5px solid rgb(230, 228, 228);
     background-color: white;
+    position: relative;
 }
 
 .huz_content {
@@ -69,6 +70,42 @@ body {
     padding: 5px;
     border: 1px solid black;
     width: 20%;
+}
+#logout {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    margin-top: 30px;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #8ec038;
+    padding: 15px;
+    row-gap: 15px;
+    width: 150px;
+    height: 200px;
+}
+
+#ga_title {
+    font-size: large;
+    margin: 0;
+}
+
+#logout > img {
+    width: 70%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+#logout_btn {
+    background-color: #8ec038;
+    color: white;
+    border: none;
+    padding: 5px;
 }
 
 .cartCount {

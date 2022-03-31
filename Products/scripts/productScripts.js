@@ -73,6 +73,7 @@ const appendData = (data,parent,cartFun) => {
         let div2 = document.createElement("div");
         div2.className = "ga_text_div";
         div2.addEventListener("click", () => {
+            // localStorage.setItem("BellVita_Product", JSON.stringify(elem));
             window.location.href = "productDetail.html";
         })
 

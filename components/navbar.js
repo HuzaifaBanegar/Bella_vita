@@ -36,8 +36,17 @@ const navbar = () => {
             <img id="user2" src="../../Navbar and bottom panel/images/OIP.jpg">
             <div id="cartIcon2" class="cartCount"><div id="ga_cartItems2"></div><img src="../../Navbar and bottom panel/images/img_290616.png"></div>
         </div>
+
+
+        <div id="logout">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6oD9C5PsCvy6SRSVdn-sdnxvEBvo0CaL1yw&usqp=CAU">
+            <h3 id="ga_title"></h3>
+            <button id="logout_btn"> Log out </button>
         </div>
+        </div>
+
     </div>
+    
     <input type="text" id="query" placeholder="search">`
 } 
 export default navbar;

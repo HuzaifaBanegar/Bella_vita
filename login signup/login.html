@@ -218,7 +218,9 @@ document.querySelector("form").addEventListener("submit", login)
             if(data.token)
             {
                 localStorage.setItem("loginToken", data.token);
+                localStorage.setItem("userName", JSON.stringify(data.user));
                 window.location.href="../index.html"
+                alert("Successfully Logged in")
             }
             // getUser(login_data.username, data.token);
             
