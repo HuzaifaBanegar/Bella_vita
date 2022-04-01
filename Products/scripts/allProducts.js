@@ -67,7 +67,7 @@ document.getElementById("ga_title").innerText = userName;
 //////
 
 let appendTo = document.getElementById("ga_products");
-let data = allProducts();
+let data = await allProducts();
 
 
 // adding items to the cart

@@ -218,7 +218,8 @@ document.querySelector("form").addEventListener("submit", login)
             if(data.token)
             {
                 localStorage.setItem("loginToken", data.token);
-                localStorage.setItem("userName", JSON.stringify(data.user));
+                localStorage.setItem("userName", JSON.stringify({firstName: data.user.firstName,
+                lastName: data.user.lastName}));
                 window.location.href="../index.html"
                 alert("Successfully Logged in")
             }
