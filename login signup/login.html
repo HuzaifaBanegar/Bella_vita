@@ -206,7 +206,7 @@ document.querySelector("form").addEventListener("submit", login)
             }
             let login_data_json = JSON.stringify(login_data);
     
-            let res= await fetch("http://localhost:5000/login", {
+            let res= await fetch("https://bella-vita-clone-backend.herokuapp.com/login", {
                 method:"POST",
                 body:login_data_json,
     

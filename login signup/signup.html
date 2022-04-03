@@ -158,7 +158,7 @@ let thelastpanel = document.querySelector("#huz_bottom_panel");
                 }
                 // console.log(firstName)
                 register_data = JSON.stringify(register_data);
-                let res = await fetch("http://localhost:5000/register", {
+                let res = await fetch("https://bella-vita-clone-backend.herokuapp.com/register", {
                     method: "POST",
                     body: register_data,
 
