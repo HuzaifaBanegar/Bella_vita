@@ -4,6 +4,11 @@ import navbar from "./navbar.js"
     let nav = document.querySelector("#bellavitanav");
     nav.innerHTML = navbar();
 
+import {searchData} from "../Products/scripts/searchData.js"
+
+let data = await searchData();
+console.log(data);
+
 
     //files path and their directory
     document.getElementById("allProducts").addEventListener("click", () => {

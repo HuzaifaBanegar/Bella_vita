@@ -15,7 +15,7 @@ async function getting()
 
     var data = await user.json()
 
-    console.log(data)
+    // console.log(data)
     display(data)
 
     }
