@@ -63,13 +63,13 @@ console.log(data);
         document.getElementById("logout").addEventListener("mouseout", () => {
             document.getElementById("logout").style.display = "none";
         });
+
+        let user = JSON.parse(localStorage.getItem("userName"));
+
+        let userName = user.firstName + " " + user.lastName;
+
+        document.getElementById("ga_title").innerText = userName;
     }
-
-    let user = JSON.parse(localStorage.getItem("userName"));
-
-    let userName = user.firstName + " " + user.lastName;
-
-    document.getElementById("ga_title").innerText = userName;
 
     
     /////
