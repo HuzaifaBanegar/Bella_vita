@@ -1,4 +1,4 @@
-let url = "http://localhost:5000/searchData";
+let url = "https://bella-vita-clone-backend.herokuapp.com/searchData";
 
 async function searchData() {
     try{

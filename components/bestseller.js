@@ -239,7 +239,7 @@ const comboList=()=>{
 
 // getting data from backend
 
-let url = "http://localhost:5000/bestsellers";
+let url = "https://bella-vita-clone-backend.herokuapp.com/bestsellers";
 
 async function bestsellerList() {
     try{

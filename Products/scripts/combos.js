@@ -3,7 +3,7 @@ import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 
-var url = "http://localhost:5000/combos"
+var url = "https://bella-vita-clone-backend.herokuapp.com/combos"
 
 let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
 
