@@ -3,8 +3,6 @@ import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
     //files path and their directory
@@ -24,18 +22,17 @@ document.getElementById("ga_footer").innerHTML = bottomPanel();
     document.getElementById("cartIcon2").addEventListener("click", () => {
         window.location.href = "../Navbar and bottom panel/cart.html";
     })
-    // document.getElementById("go_to_signup").addEventListener("click", () => {
-    //     window.location.href = "./login signup/signup.html"
-    // })
+    document.getElementById("logout").addEventListener("click", () => {
+        window.location.href = "../login signup/signup.html"
+    })
     
 
-var url = "http://localhost:5000/combos"
-=======
+// var url = "http://localhost:5000/combos"
+// var url = "https://bella-vita-clone-backend.herokuapp.com/combos"
+
+
 var url = "https://bella-vita-clone-backend.herokuapp.com/combos"
->>>>>>> eb8d1e661a86d968299d6f81452cc6fec4e1ebca
-=======
-var url = "https://bella-vita-clone-backend.herokuapp.com/combos"
->>>>>>> eb8d1e661a86d968299d6f81452cc6fec4e1ebca
+
 
 let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
 
