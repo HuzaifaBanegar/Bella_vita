@@ -18,6 +18,10 @@ document.getElementById("bestSeller").addEventListener("click", () => {
 document.getElementById("bestSeller2").addEventListener("click", () => {
     window.location.href = "./bestseller.html"
 })
+document.getElementById("byCombos").addEventListener("click", () => {
+    window.location.href = "./combos.html"
+})
+
 document.getElementById("cartIcon").addEventListener("click", () => {
     window.location.href = "../../Navbar and bottom panel/cart.html";
 })

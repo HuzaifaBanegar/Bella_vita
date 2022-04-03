@@ -26,7 +26,7 @@ const navbar = () => {
             <p>BY CONTENT</p>
             <p>BY CONCERN</p>
             <p>BY INGREDIENTS</p>
-            <p>BY COMBOS</p>
+            <p id="byCombos">BY COMBOS</p>
             <p>OUR CELEBRITIES</p>
             <p>NATURAL SOAP</p>
             <p>MORE</p>
