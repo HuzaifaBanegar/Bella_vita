@@ -1,10 +1,11 @@
-let url = "http://localhost:5000/bestsellers";
+let url = "https://bella-vita-clone-backend.herokuapp.com/searchData";
 
 async function searchData() {
     try{
         let res = await fetch(url);
         let data = await res.json();
 
+        console.log(data)
         return data;
     }
     catch(err) {
@@ -12,4 +13,4 @@ async function searchData() {
     }
 }
 
-export default searchData;
+export {searchData};

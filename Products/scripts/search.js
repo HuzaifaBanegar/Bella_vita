@@ -1,4 +1,4 @@
-import searchData  from "./searchData.js";
+import allProducts  from "./productsData";
 import { appendData, sortProducts } from "./productScripts.js";
 
 
@@ -72,7 +72,7 @@ document.getElementById("ga_title").innerText = userName;
 //////
 
 let appendTo = document.getElementById("ga_products");
-let products = await searchData();
+let products = await allProducts();
 
 
 // Search functionality by taking search input from local storage then will iterate through the products data and if the name matches with the search input that item will be pushed to data array and we will show the items present in the data array which will be the search result.

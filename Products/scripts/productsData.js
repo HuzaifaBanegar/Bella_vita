@@ -1,5 +1,5 @@
 
-let url = "http://localhost:5000/allProducts";
+let url = "https://bella-vita-clone-backend.herokuapp.com/allProducts";
 
 async function allProducts () {
     try{

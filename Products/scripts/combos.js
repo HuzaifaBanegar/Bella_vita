@@ -3,7 +3,35 @@ import bottomPanel from "../../components/bottompanel.js"
 document.getElementById("ga_navbar").innerHTML = navbar();
 document.getElementById("ga_footer").innerHTML = bottomPanel();
 
+<<<<<<< HEAD
+
+
+    //files path and their directory
+    document.getElementById("allProducts").addEventListener("click", () => {
+        window.location.href= '../Products/allProducts.html';
+    })
+    document.getElementById("bestSeller").addEventListener("click", () => {
+        window.location.href= '../Products/bestseller.html';
+    })
+    document.getElementById("byCombos").addEventListener("click", () => {
+        window.location.href = "../Products/combos.html"
+    })
+    document.getElementById("cartIcon").addEventListener("click", () => {
+        window.location.href = "../Navbar and bottom panel/cart.html";
+        // console.log("Hello")
+    })
+    document.getElementById("cartIcon2").addEventListener("click", () => {
+        window.location.href = "../Navbar and bottom panel/cart.html";
+    })
+    // document.getElementById("go_to_signup").addEventListener("click", () => {
+    //     window.location.href = "./login signup/signup.html"
+    // })
+    
+
 var url = "http://localhost:5000/combos"
+=======
+var url = "https://bella-vita-clone-backend.herokuapp.com/combos"
+>>>>>>> eb8d1e661a86d968299d6f81452cc6fec4e1ebca
 
 let cartArr = JSON.parse(localStorage.getItem("BellaVitaCart")) || [];
 
@@ -15,7 +43,7 @@ async function getting()
 
     var data = await user.json()
 
-    console.log(data)
+    // console.log(data)
     display(data)
 
     }

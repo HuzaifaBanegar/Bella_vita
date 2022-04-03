@@ -18,6 +18,9 @@ document.getElementById("allProducts").addEventListener("click", () => {
 document.getElementById("allProducts2").addEventListener("click", () => {
     window.location.href = "./allProducts.html"
 })
+document.getElementById("byCombos").addEventListener("click", () => {
+    window.location.href = "./combos.html"
+})
 document.getElementById("cartIcon").addEventListener("click", () => {
     window.location.href = "../../Navbar and bottom panel/cart.html";
 })
