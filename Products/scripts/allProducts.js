@@ -33,10 +33,10 @@ document.getElementById("cartIcon2").addEventListener("click", () => {
 let token = localStorage.getItem("loginToken");
 if(!token) {
     document.getElementById("user1").addEventListener("click", () => {
-        window.location.href = "./login signup/login.html"
+        window.location.href = "../../login signup/login.html"
     })
     document.getElementById("user2").addEventListener("click", () => {
-        window.location.href = "./login signup/login.html"
+        window.location.href = "../../login signup/login.html"
     })
 }
 else {
