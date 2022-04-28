@@ -1,5 +1,5 @@
 
-<h2>Bella Vita Organic Clone</h2>
+<h2>Bella Vita Organic Clone (Frontend)</h2>
 <hr/>
 
 <h3>
